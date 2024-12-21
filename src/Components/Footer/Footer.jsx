@@ -8,12 +8,9 @@ const Footer = () => {
     >
       <div className="mx-auto max-w-page_lg grid grid-cols-1 lg:grid-cols-4 px-4 lg:px-32 footer">
         <div>
-          <div className="flex items-center justify-center lg:justify-start my-4">
+          <div className="flex items-center justify-center lg:justify-start my-4 lg:pl-10">
             <div>
               <img className="w-[100px]" src="/Images/tech-council.png" />
-            </div>
-            <div className="ml-4">
-              <img className="w-[150px]" src="/Images/oss_logo.png" />
             </div>
           </div>
           <div className="text-xs flex flex-col items-center lg:items-start">
@@ -38,13 +35,10 @@ const Footer = () => {
         <div className="my-4 flex flex-col items-center justify-center">
           <div className="font-semibold text-xl">Support</div>
           <div className="mt-2">
-            <a href="mailto:outreach.parsec@iitdh.ac.in">sponsor parsec4.0</a>
+            <a href="mailto:outreach.parsec@iitdh.ac.in">sponsor parsec5.0</a>
           </div>
           <div className="mt-2">
             <a href="mailto:gstech@iitdh.ac.in">gstech@iitdh.ac.in</a>
-          </div>
-          <div className="mt-2">
-            <a href="mailto:oss@iitdh.ac.in">oss@iitdh.ac.in</a>
           </div>
         </div>
         <div className="my-4 flex flex-col items-center lg:items-end justify-center">
@@ -79,7 +73,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="mt-8 lg:text-right text-xs">
-            © Copyright - 2024 Parsec 4.0 all rights reserved
+            © Copyright - 2025 Parsec 5.0 all rights reserved
           </div>
         </div>
       </div>

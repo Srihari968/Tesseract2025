@@ -5,7 +5,7 @@ import App from "./App.jsx"
 import "./index.css"
 
 export const metadata = {
-  title: 'Parsec 2024',
+  title: 'Parsec 2025',
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(

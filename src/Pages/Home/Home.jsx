@@ -9,21 +9,21 @@ function Home() {
         <section id="animate-1">
           <div className="relative h-screen w-full">
             <div className="text-5xl mt-8 md:text-8xl max-[350px]:text-4xl md:mt-[-100px] font-semibold font-hero absolute top-1/2 left-0">
-              <div>Parsec 4.0</div>
+              <div>Parsec 5.0</div>
             </div>
             <div className="text-5xl max-[350px]:text-3xl md:mt-12 mt-24 md:text-7xl font-medium absolute top-1/2">
               <div>Annual techfest, </div>
               <div>
                 <span className="gradient-text">IIT</span> Dharwad
               </div>
-              <div className="text-2xl mt-4">2nd Feb - 4th Feb, 2024</div>
+              <div className="text-2xl mt-4">31st Jan - 2th Feb, 2025</div>
             </div>
           </div>
           <div className="relative">
             <div className="max-w-[1000px] text-xl rounded-2xl mx-auto my-28 p-8 bg-[#000006] bg-opacity-80">
               Witness the collision of genius minds and cutting-edge technology
               at IIT Dharwad's most electrifying{" "}
-              <span className="gradient-text">Technical Fest - Parsec 4.0</span>
+              <span className="gradient-text">Technical Fest - Parsec 5.0</span>
               , a rendevous with the future! Get ready to dive into the sea of
               circuits & algorithms, machines & robots, bytes and bits, zeroes &
               ones. Let your imagination and innovation take flight in this
@@ -41,16 +41,12 @@ function Home() {
               </div>
               <div className="text-xl mt-4 rounded-2xl p-8 bg-black bg-opacity-80">
                 <div>
-                  Parsec provides an excellent platform for aspiring
-                  technologists to showcase their skills and serves as an ideal
-                  launchpad for innovative ideas. With a diverse range of
-                  events, competitions, workshops, and expert lectures, the
-                  festival aims to reignite the enthusiasm for technology and
-                  business among the nation's brightest minds. Beyond the
-                  technical aspects, Parsec ensures a vibrant and enjoyable
-                  experience with a variety of cultural events. All are invited
-                  to join this technocultural festival for a blend of learning
-                  and fun!
+                  Parsec offers an incredible stage for emerging technologists to display
+                  their expertise and bring innovative ideas to life. Packed with events, 
+                  competitions, workshops, and keynote sessions, it seeks to ignite a passion 
+                  for technology and business in the brightest minds across the nation. 
+                  Beyond the tech buzz, Parsec creates a vibrant experience with engaging cultural activities. 
+                  Join this one-of-a-kind technocultural fest to explore, innovate, and have a fantastic time!
                 </div>
               </div>
             </div>

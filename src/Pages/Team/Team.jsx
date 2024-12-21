@@ -1,8 +1,9 @@
 import React from "react"
 import TeamCard from "../../Components/TeamCard/TeamCard"
 import "./Team.css"
-import teamsData from "./data"
+import teamsData from "./teamsData"
 import eventsLeadData from "./eventLeads"
+import ComingSoonCard from "../../Components/ComingSoonCard/ComingSoonCard"
 
 export default function Team() {
   return (
@@ -29,7 +30,7 @@ export default function Team() {
           <div className="teamContainer">
             <h2 className="font-hero">EVENTS TEAM</h2>
           </div>
-          {eventsLeadData.map((team, index) => (
+          {/* {eventsLeadData.map((team, index) => (
             <div className="teamContainer" key={index}>
               <h3 className="font-hero">{team.name}</h3>
               <div className="teamCardWrapper">
@@ -38,7 +39,8 @@ export default function Team() {
                 ))}
               </div>
             </div>
-          ))}
+          ))} */}
+          <ComingSoonCard></ComingSoonCard>
         </div>
       </div>
     </div>
