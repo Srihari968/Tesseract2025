@@ -1,0 +1,130 @@
+.countdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(26, 26, 46, 0.8);
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+.countdown-header .countdown-title {
+    font-size: 1.5rem;
+    color: #fff;
+    position: relative;
+}
+
+.countdown-header .highlight {
+    color: #ff6a00;
+    font-weight: bold;
+    background-image: linear-gradient(to right, #ff6a00, #ee0979);
+    display: inline-block;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -text-fill-color: transparent;
+}
+
+.countdown-timer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.countdown-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease-in-out;
+}
+
+.countdown-box:hover {
+    transform: scale(1.05);
+}
+
+.countdown-value {
+    font-weight: bold;
+}
+
+.countdown-label {
+    opacity: 0.9;
+}
+
+.countdown-complete h2 {
+    color: #ff6a00;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    text-shadow: 0 0 10px rgba(255, 106, 0, 0.5);
+}
+
+@media (max-width: 480px) {
+    .countdown-timer {
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 0.3rem;
+    }
+
+    .countdown-box {
+        padding: 0.4rem;
+        min-width: 50px;
+    }
+
+    .countdown-value {
+        font-size: 1.2rem;
+    }
+
+    .countdown-label {
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 480px) {
+    .countdown-timer {
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 1rem;
+    }
+
+    .countdown-box {
+        padding: 0.8rem;
+        min-width: 60px;
+    }
+
+    .countdown-value {
+        font-size: 1.5rem;
+    }
+
+    .countdown-label {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .countdown-timer {
+      flex-direction: row;
+        justify-content: center;
+      gap: 1rem;
+    }
+
+    .countdown-box {
+        padding: 1rem;
+      min-width: 80px;
+    }
+
+    .countdown-value {
+        font-size: 2rem;
+    }
+
+    .countdown-label {
+        font-size: 1rem;
+    }
+}
