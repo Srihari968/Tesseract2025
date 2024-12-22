@@ -1,30 +1,39 @@
-import "./Home.css"
-import Sponcer from "../../Components/Sponcers/Sponcer"
-import SponcerCard from "../../Components/Sponcers/SponcerCard"
+import "./Home.css";
+import Sponcer from "../../Components/Sponcers/Sponcer";
+import SponcerCard from "../../Components/Sponcers/SponcerCard";
+import Countdown from "../../Components/Countdown/Countdown";
+import ComingSoonCard from "../../Components/ComingSoonCard/ComingSoonCard";
 
 function Home() {
   return (
     <>
       <div className="mx-auto max-w-page_lg md:px-8 px-4 overflow-hidden">
         <section id="animate-1">
-          <div className="relative h-screen w-full">
-            <div className="text-5xl mt-8 md:text-8xl max-[350px]:text-4xl md:mt-[-100px] font-semibold font-hero absolute top-1/2 left-0">
-              <div>Parsec 5.0</div>
-            </div>
-            <div className="text-5xl max-[350px]:text-3xl md:mt-12 mt-24 md:text-7xl font-medium absolute top-1/2">
-              <div>Annual techfest, </div>
-              <div>
-                <span className="gradient-text">IIT</span> Dharwad
+        <div className="relative h-screen w-full pt-16">
+          <div className="flex flex-col custom-width:flex-row items-center justify-center custom-width:justify-between h-full px-4 custom-width:px-8 gap-4 custom-width:gap-0">
+            <div className="text-left w-full custom-width:w-auto flex flex-col items-start space-y-2">
+              <div className="text-4xl custom-width:text-8xl font-semibold font-hero">
+                Parsec 5.0
               </div>
-              <div className="text-2xl mt-4">31st Jan - 2th Feb, 2025</div>
+              <div className="text-3xl custom-width:text-7xl font-medium">
+                Annual techfest,
+                <div>
+                  <span className="gradient-text">IIT</span> Dharwad
+                </div>
+              </div>
+              <div className="text-lg custom-width:text-2xl">31st Jan - 2nd Feb, 2025</div>
+            </div>
+            <div className="w-auto text-center custom-width:text-right mt-4 custom-width:mt-0 flex-shrink-0 text-3xl sm:text-4xl custom-width:text-5xl">
+              <Countdown eventDate="2025-01-31T00:00:00" />
             </div>
           </div>
+        </div>
           <div className="relative">
             <div className="max-w-[1000px] text-xl rounded-2xl mx-auto my-28 p-8 bg-[#000006] bg-opacity-80">
               Witness the collision of genius minds and cutting-edge technology
               at IIT Dharwad's most electrifying{" "}
               <span className="gradient-text">Technical Fest - Parsec 5.0</span>
-              , a rendevous with the future! Get ready to dive into the sea of
+              , a rendezvous with the future! Get ready to dive into the sea of
               circuits & algorithms, machines & robots, bytes and bits, zeroes &
               ones. Let your imagination and innovation take flight in this
               celebration of brilliance and creativity.
@@ -63,12 +72,11 @@ function Home() {
             </div>
             <div className="mt-10">
               <Sponcer title={"Main Sponsors"}>
-                <SponcerCard
+                {/* <SponcerCard
                   imageUrl={"/Images/sponsors/big_mishra_logo.png"}
                 />
-                <SponcerCard imageUrl={"/Images/sponsors/myle_logo).png"} />
-                {/* <SponcerCard imageUrl={"/Images/sponsors/github.png"} />
-                <SponcerCard imageUrl={"/Images/sponsors/codingNinjas.png"} /> */}
+                <SponcerCard imageUrl={"/Images/sponsors/myle_logo).png"} /> */}
+                <ComingSoonCard></ComingSoonCard>
               </Sponcer>
             </div>
           </div>
@@ -145,7 +153,7 @@ function Home() {
         </section>
       </div>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;
