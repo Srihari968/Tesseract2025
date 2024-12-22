@@ -11,17 +11,17 @@ function Home() {
         <section id="animate-1">
         <div className="relative h-screen w-full pt-16">
           <div className="flex flex-col custom-width:flex-row items-center justify-center custom-width:justify-between h-full px-4 custom-width:px-8 gap-4 custom-width:gap-0">
-            <div className="text-left w-full custom-width:w-auto flex flex-col items-start space-y-2">
-              <div className="text-4xl custom-width:text-8xl font-semibold font-hero">
+            <div className="text-center custom-width:text-left w-full custom-width:w-auto flex flex-col items-start space-y-2 flex-shrink-0">
+              <div className="w-full text-4xl custom-width:text-8xl font-semibold font-hero">
                 Parsec 5.0
               </div>
-              <div className="text-3xl custom-width:text-7xl font-medium">
+              <div className="w-full text-3xl custom-width:text-7xl font-medium">
                 Annual techfest,
-                <div>
+                <div className="w-full">
                   <span className="gradient-text">IIT</span> Dharwad
                 </div>
               </div>
-              <div className="text-lg custom-width:text-2xl">31st Jan - 2nd Feb, 2025</div>
+              <div className="w-full text-lg text-center custom-width:text-left custom-width:text-2xl">31st Jan - 2nd Feb, 2025</div>
             </div>
             <div className="w-auto text-center custom-width:text-right mt-4 custom-width:mt-0 flex-shrink-0 text-3xl sm:text-4xl custom-width:text-5xl">
               <Countdown eventDate="2025-01-31T00:00:00" />
