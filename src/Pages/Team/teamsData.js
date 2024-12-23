@@ -1,5 +1,17 @@
 const teamsData = [
     {
+        name: "Overall Coordinator",
+        members: [
+        {
+            name: "Anvay Jaykar",
+            email: "220010023@iitdh.ac.in",
+            linkedin: "https://www.linkedin.com/in/anvay-jaykar-7b3974267/",
+            instagram: "aiden_tempest",
+            image:"https://drive.google.com/open?id=1tJzHQb7EUWh6JHxOi1wfEn31nz3efRy6",
+        },
+        ],
+    },
+    {
         name: "Core Team",
         members: [
         {

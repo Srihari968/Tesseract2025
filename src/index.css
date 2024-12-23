@@ -20,33 +20,28 @@
   --default-dark: 240 4% 46%;
 }
 
-/* For Webkit-based browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
-  width: 8px; /* Minimal width */
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000; /* Subtle dark track to match background */
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4a4a4a; /* Subtle color for the thumb */
+  background: #4a4a4a;
   border-radius: 10px;
   border: 2px solid #000000;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #616161; /* Slightly brighter on hover */
+  background: #616161;
 }
 
-/* Apply scrollbar-gutter for overlapping behavior */
 html {
-  scrollbar-gutter: stable overlap; /* Ensures scrollbar overlaps content */
+  scrollbar-gutter: stable overlap;
 }
 
-
-
-/* Optional: Add smooth scrolling for a better user experience */
 html {
   scroll-behavior: smooth;
 }
