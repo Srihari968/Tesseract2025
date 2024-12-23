@@ -49,15 +49,11 @@ const TeamCard = ({ data }) => {
       >
         <div>
           <div className="w-full h-full">
-            <div
-              className="w-full pt-[100%] rounded-lg outline outline-2 outline-transparent shadow-medium"
-              style={{
-                backgroundImage: `url(${data.image})`,
-                backgroundPosition: "center top",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
-            ></div>
+          <img
+            src={data.image}
+            alt={`${data.name}'s image`}
+            className="w-full rounded-lg outline outline-2 outline-transparent shadow-medium object-cover aspect-[1/1.2]"
+          />
           </div>
         </div>
         <div className="text-center font-semibold mt-4">{data.name}</div>
