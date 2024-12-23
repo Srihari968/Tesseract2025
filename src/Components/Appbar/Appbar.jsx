@@ -44,7 +44,7 @@ function Appbar({ current }) {
             <img
               src="/Images/parsec-logo.png"
               alt="parsec logo"
-              className="sm:w-[200px] sm:h-[36px] w-[150px] h-[27px]"
+              className="sm:w-[150px] sm:h-[36px] w-[100px] h-[27px]"
             />
           </div>
           <div className="nav-options-desktop flex items-center justify-end md:w-3/4 max-[768px]:hidden">
