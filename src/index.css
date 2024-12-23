@@ -22,25 +22,35 @@
 
 /* For Webkit-based browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 8px; /* Minimal width */
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
-  border-radius: 4px;
+  background: #000000; /* Subtle dark track to match background */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3a3a3a;
-  border-radius: 4px;
+  background: #4a4a4a; /* Subtle color for the thumb */
+  border-radius: 10px;
+  border: 2px solid #000000;
 }
 
-/* For Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #3a3a3a #000000;
+::-webkit-scrollbar-thumb:hover {
+  background: #616161; /* Slightly brighter on hover */
 }
+
+/* Apply scrollbar-gutter for overlapping behavior */
+html {
+  scrollbar-gutter: stable overlap; /* Ensures scrollbar overlaps content */
+}
+
+
+
+/* Optional: Add smooth scrolling for a better user experience */
+html {
+  scroll-behavior: smooth;
+}
+
 
 
 body {
