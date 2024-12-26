@@ -59,6 +59,11 @@ function Appbar({ current }) {
               </Link>
             </div>
             <div className="ml-4">
+              <Link to="/login">
+                <NavButton content="Login" isActive={current === "login"} />
+              </Link>
+            </div>
+            <div className="ml-4">
               <Link to="/team">
                 <NavButton content="Team" isActive={current === "team"} />
               </Link>
@@ -107,6 +112,7 @@ function Appbar({ current }) {
               />
             </Link>
           </div>
+          
           <div>
             <Link to="/team">
               <NavTile
