@@ -4,10 +4,8 @@ import Home from "./Pages/Home/Home"
 import Events from "./Pages/Events/Events"
 import Team from "./Pages/Team/Team"
 import Cultural from "./Pages/Cultural/Cultural"
-
-=======
-import LoginSignupPage from "./Pages/LoginSignupPage"
-import FormPage from "./Pages/FormPage"
+import LoginSignupPage from "./Pages/Login/login"
+import FormPage from "./Pages/Forms/Form"
 
 
 const Views = () => {
