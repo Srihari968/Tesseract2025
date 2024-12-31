@@ -59,11 +59,6 @@ function Appbar({ current }) {
               </Link>
             </div>
             <div className="ml-4">
-              <Link to="/login">
-                <NavButton content="Login" isActive={current === "login"} />
-              </Link>
-            </div>
-            <div className="ml-4">
               <Link to="/team">
                 <NavButton content="Team" isActive={current === "team"} />
               </Link>
@@ -74,6 +69,11 @@ function Appbar({ current }) {
                   content="Cultural"
                   isActive={current === "cultural"}
                 />
+              </Link>
+            </div>
+            <div className="ml-4">
+              <Link to="/login">
+                <NavButton content="Login" isActive={current === "login"} />
               </Link>
             </div>
           </div>
@@ -90,7 +90,7 @@ function Appbar({ current }) {
         </div>
         <div
           className={`nav-mobile-options h-0 overflow-hidden md:hidden ${
-            mobileNavActive && "h-60"
+            mobileNavActive && "h-72"
           } ease-in-out duration-300`}
           style={{ transformOrigin: "left top" }}
         >
@@ -128,6 +128,15 @@ function Appbar({ current }) {
                 onClick={() => setMobileNavActive(false)}
                 content="Cultural Events"
                 isActive={current === "cultural"}
+              />
+            </Link>
+          </div>
+          <div>
+            <Link to="/login">
+              <NavTile
+                onClick={() => setMobileNavActive(false)}
+                content="Login"
+                isActive={current === "login"}
               />
             </Link>
           </div>

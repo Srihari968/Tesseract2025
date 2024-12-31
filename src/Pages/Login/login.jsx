@@ -4,7 +4,7 @@ export default function LoginSignupPage() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gradient-to-br from-purple-600 to-blue-400">
+    <div className="flex justify-center items-center h-screen">
       <div className="bg-gray-800/40 backdrop-blur-lg p-8 rounded-lg shadow-lg">
         <h1 className="text-3xl font-hero text-white mb-6">Welcome to Parsec</h1>
         <div className="flex flex-col gap-4">

@@ -8,16 +8,14 @@ export default function FormPage() {
     mobileNumber: "",
     accommodation: "",
   });
-  const [userId, setUserId] = useState(null); // State to hold the Google ID
+  const [userId, setUserId] = useState(null);
 
-  // Retrieve the Google ID from localStorage when the component mounts
   useEffect(() => {
     const storedUserId = localStorage.getItem("googleId");
     if (storedUserId) {
       setUserId(storedUserId);
     } else {
       alert("Google ID not found. Please log in again.");
-      // Redirect to login if needed
       window.location.href = "/login";
     }
   }, []);
@@ -29,16 +27,15 @@ export default function FormPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!userId) {
       alert("Google ID is missing. Please log in again.");
       return;
     }
 
     try {
-      // Include userId (Google ID) in the request payload
       const response = await axios.post(
-        `http://localhost:3000/users/forms`, 
+        `http://localhost:3000/users/forms`,
         { ...formData, userId }
       );
       alert("Form submitted successfully!");
@@ -50,13 +47,10 @@ export default function FormPage() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gradient-to-br from-blue-600 to-purple-400">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-gray-800/40 backdrop-blur-lg p-8 rounded-lg shadow-lg w-full max-w-md"
-      >
-        <h1 className="text-2xl font-hero text-white mb-6">Event Form</h1>
-        <div className="flex flex-col gap-4">
+    <div className="flex justify-center items-center h-screen">
+      <div className="bg-gray-800/30 backdrop-blur-lg p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 className="text-3xl font-hero text-white mb-6">Event Registration</h1>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="text"
             name="userName"
@@ -101,8 +95,14 @@ export default function FormPage() {
           >
             Submit
           </button>
-        </div>
-      </form>
+          <a
+            href="/"
+            className="text-sm text-gray-200 underline hover:text-white text-center"
+          >
+            Back to Home
+          </a>
+        </form>
+      </div>
     </div>
   );
 }
