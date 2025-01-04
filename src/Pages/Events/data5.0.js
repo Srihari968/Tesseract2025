@@ -26,7 +26,7 @@ const data = [
   {
     heading: "Bithunt 3.0",
     content: `Gather your squad of four and dive into BitHunt 3.0! This campus-wide event challenges your problem-solving skills, data structures, and algorithms in two thrilling rounds. Round 1, a quiz selection, will test your team's knowledge, paving the way for the top 8 contenders to engage in a color-coded treasure hunt in Round 2. Who will decipher the clues, conquer the campus, and claim the coveted title? Join BitHunt 3.0 for an unforgettable blend of intellect and adventure!`,
-    image: "/Images/Events/solidegde-for-site.png",
+    image: "/Images/Events/bithunt-for-site.png",
     registrationLink: "https://unstop.com/competitions/bithunt-30-parsec-50-indian-institute-of-technology-iit-dharwad-1318416",
     location: "PC IIT Dharwad",
     timing: "1 Feb, 9:00 AM - 3:00 PM",
