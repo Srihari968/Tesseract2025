@@ -29,13 +29,6 @@ const teamsData = [
             image:"https://drive.google.com/thumbnail?id=1FrbULcQ89sqr3cGOxCzsWNmg8BhhSujA",
         },
         {
-            name: "Lavanya Shende ",
-            email: "220120022@iitdh.ac.in",
-            linkedin:"https://www.linkedin.com/in/shende-lavanya-jayant-85a870258/",
-            instagram: "lavanya_shende",
-            image:"https://drive.google.com/thumbnail?id=1aMfwhFYCnug1GHSxN-iN-5AzjBXY_PNo",
-        },
-        {
             name: "Aayush Vats",
             email: "220010001@iitdh.ac.in",
             linkedin: "www.linkedin.com/in/vatsaayush",
