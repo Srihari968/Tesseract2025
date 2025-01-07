@@ -7,7 +7,7 @@ import ComingSoonCard from "../../Components/ComingSoonCard/ComingSoonCard"
 
 export default function Team() {
   return (
-    <div className="teamBody">
+    <div className="teamBody relative mx-auto max-w-page_lg md:px-8 px-4 pt-4 overflow-x-hidden overflow-y-hidden">
       <div className="teamWrapper">
         <div className="teamsContentWrapper">
           <div className="teamHeaderWrapper">

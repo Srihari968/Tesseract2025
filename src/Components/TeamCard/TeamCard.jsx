@@ -1,6 +1,45 @@
-import { BsInstagram, BsLinkedin } from "react-icons/bs"
-import { FiMail } from "react-icons/fi"
+import { useState, useEffect } from "react";
+import { BsInstagram, BsLinkedin } from "react-icons/bs";
+import { FiMail, FiPhone } from "react-icons/fi";
+
 const TeamCard = ({ data }) => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isOverlayVisible, setOverlayVisible] = useState(false);
+
+  // Detect if the device is mobile
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // Set initial state
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleImageClickMobile = () => {
+    if (isMobile) {
+      setOverlayVisible((prev) => !prev);
+    }
+  };
+
+  const handleCallClick = (e) => {
+    if (isMobile && !isOverlayVisible) {
+      e.preventDefault(); // Prevent call if overlay is not visible
+      setOverlayVisible(true); // Show overlay on first click
+    } else if (isMobile && isOverlayVisible) {
+      // Directly open call dialog on second click (mobile)
+      if (window.confirm("Are you sure you want to make this call?")) {
+        window.location.href = `tel:${data.phone}`;
+      }
+    } else {
+      // Desktop: Ensure clicking the overlay triggers the call confirmation
+      if (window.confirm("Are you sure you want to make this call?")) {
+        window.location.href = `tel:${data.phone}`;
+      }
+    }
+  };
+
   return (
     <div
       className="
@@ -17,21 +56,14 @@ const TeamCard = ({ data }) => {
         outline
         outline-2
         outline-[transparent]
+        hover:shadow-lg
+        transition-shadow
+        duration-300
       "
     >
-      {/* <div
-        className="absolute inset-0 h-[300px] w-[300px] top-2/3 left-1/2"
-        style={{
-          transform: "translate(-50%, -50%)",
-          backgroundImage: "url(/Images/blue-purple.svg)",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
-        }}
-      ></div> */}
       {data.subtitle && (
         <div className="absolute w-full text-center bottom-[-40px] font-hero">
-          Subtitle
+          {data.subtitle}
         </div>
       )}
 
@@ -47,21 +79,58 @@ const TeamCard = ({ data }) => {
           z-30 
         "
       >
-        <div>
+        <div
+          className={`relative group ${
+            isMobile ? "cursor-pointer" : "hover:cursor-pointer"
+          }`}
+          onClick={handleImageClickMobile}
+        >
           <div className="w-full h-full">
-          <img
-            src={data.image}
-            alt={`${data.name}'s image`}
-            className="w-full rounded-lg outline outline-2 outline-transparent shadow-medium object-cover aspect-[1/1.2]"
-          />
+            <img
+              src={data.image}
+              alt={`${data.name}'s image`}
+              className="w-full rounded-lg outline outline-2 outline-transparent shadow-medium object-cover aspect-[1/1.2] transition-transform duration-300 group-hover:scale-105"
+            />
           </div>
+          {data.phone && (
+            <a
+              href={`tel:${data.phone}`}
+              className={`
+                absolute 
+                inset-0 
+                flex 
+                flex-col
+                items-center 
+                justify-center 
+                bg-black/60 
+                text-white 
+                text-sm 
+                font-semibold 
+                transition-opacity 
+                duration-300 
+                rounded-lg
+                ${
+                  isMobile
+                    ? isOverlayVisible
+                      ? "opacity-100 pointer-events-auto"
+                      : "opacity-0 pointer-events-none"
+                    : "opacity-0 group-hover:opacity-100 pointer-events-auto"
+                }
+              `}
+              onClick={handleCallClick}
+            >
+              <FiPhone size={20} className="mb-2" />
+              Call: {data.phone}
+            </a>
+          )}
         </div>
         <div className="text-center font-semibold mt-4">{data.name}</div>
         <div>
           <div className="flex justify-around mt-4 mb-2 px-4">
-            {data.email && data.email !== "" && (
+            {data.email && (
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-xl hover:scale-110"
                 href={`mailto:${data.email}`}
               >
@@ -70,9 +139,10 @@ const TeamCard = ({ data }) => {
                 </span>
               </a>
             )}
-            {data.linkedin && data.linkedin !== "" && (
+            {data.linkedin && (
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-xl hover:scale-110"
                 href={data.linkedin}
               >
@@ -81,11 +151,12 @@ const TeamCard = ({ data }) => {
                 </span>
               </a>
             )}
-            {data.instagram && data.instagram !== "" && (
+            {data.instagram && (
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-xl hover:scale-110"
-                href={data.instagram}
+                href={`https://instagram.com/${data.instagram}`}
               >
                 <span className="text-pink-500 cursor-pointer">
                   <BsInstagram />
@@ -96,7 +167,7 @@ const TeamCard = ({ data }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TeamCard
+export default TeamCard;
