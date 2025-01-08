@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate  } from "react-router-dom";
 
 export default function FormPage() {
   const [formData, setFormData] = useState({
@@ -13,7 +13,7 @@ export default function FormPage() {
   const [userId, setUserId] = useState(null); // Stores the Google ID
   const [submissionStatus, setSubmissionStatus] = useState(null); // Track form submission status
   const location = useLocation();
-
+  const navigate = useNavigate(); 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const googleId = queryParams.get("googleId");
@@ -48,6 +48,7 @@ console.log("Payload:", payload);
       );
       setSubmissionStatus("success"); // Set submission status to success
       alert("Form submitted successfully!");
+      navigate("/events");
       console.log("Response data:", response.data);
       setFormData({ // Reset form after successful submission
         userName: "",
