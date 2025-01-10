@@ -2,7 +2,7 @@ import { IoLocationSharp } from "react-icons/io5";
 
 export default function EventCard({ flipLayout = false, data }) {
   return (
-    <div className={`w-full flex my-12 ${flipLayout && "justify-end"}`}>q
+    <div className={`w-full flex my-12 ${flipLayout && "justify-end"}`}>
       <div className="w-full min-[900px]:w-[900px]">
         <div className="w-full flex flex-col sm:flex-row rounded-xl">
           <div

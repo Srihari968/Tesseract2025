@@ -40,7 +40,13 @@ function Appbar({ current }) {
         style={{ zIndex: 100 }}
       >
         <div className="mx-auto max-w-page_lg flex items-center justify-between px-4 h-20">
-          <div className="md:w-1/4">
+          <div className="md:w-1/4 flex items-center space-x-4">
+            <img
+              src="/IIT dh logo.png"
+              alt="parsec logo"
+              className="sm:w-[69.6px] sm:h-[60px] w-[13px] h-[10px]"
+            />
+            <div className="w-[2px] h-[36px] bg-white"></div>
             <img
               src="/Images/parsec-logo.png"
               alt="parsec logo"
