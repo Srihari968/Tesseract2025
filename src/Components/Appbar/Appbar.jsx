@@ -45,7 +45,7 @@ function Appbar({ current }) {
             <img
               src="/IIT dh logo.png"
               alt="parsec logo"
-              className="sm:w-[69.6px] sm:h-[60px] w-[13px] h-[10px]"
+              className="sm:w-[69.6px] sm:h-[60px] w-[52.3px] h-[45.09px]"
             />
             </a>
             <div className="w-[2px] h-[36px] bg-white"></div>
