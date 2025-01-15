@@ -56,6 +56,16 @@ const data = [
     timing: "31 Jan, 2:00 PM - 6:00 PM",
   },
   {
+    heading: "Idea Hub",
+    content: `PARSEC 5.0, IIT Dharwad's annual tech symposium, brings you IdeaHub, a premier platform for innovators to pitch their groundbreaking ideas to a panel of judges. Whether it’s a transformative concept or a creative solution, seize this chance to secure funding of up to $20,000 to bring your vision to life!
+    Hosted on Unstop, IdeaHub offers a streamlined experience, empowering aspiring entrepreneurs and problem-solvers to showcase their potential.
+    Don’t miss this golden opportunity to pitch, inspire, and turn your ideas into reality at IdeaHub, PARSEC 5.0!`,
+    image: "/Images/Events/ideahub-for-site.png",
+    registrationLink: "https://unstop.com/o/yRpwzr7?lb=qkhVYy9&utm_medium=Share&utm_source=shortUrl",
+    location: "Online",
+    timing: "TBD",
+  },
+  {
     heading: "Cosmic Connect",
     content: `An Astronomy Exploration Workshop at PARSEC 5.0, IIT Dharwad's annual technological symposium, invites you to embark on an enlightening journey through the cosmos. This unique workshop blends foundational learning with practical stargazing, offering participants a chance to explore celestial wonders through telescopes and binoculars in a hands-on outdoor session. With engaging classroom discussions, a thrilling rapid-fire quiz on telescope functionalities, and exciting prizes, this event promises an unforgettable experience for astronomy enthusiasts. All participants will receive certificates and goodies, with special recognition for winning teams. Join us to ignite your curiosity and connect with the stars!`,
     image: "/Images/Events/cosmicconnect-for-site.png",
