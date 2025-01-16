@@ -71,7 +71,7 @@ function Home() {
               Our Sponsors
             </div>
             <div className="mt-10">
-            <Sponcer title={"Title Sponsors"}>
+            <Sponcer title={"Title Sponsor"}>
                 <SponcerCard
                   imageUrl={"/Images/sponsors/Title_sponser.jpg"}
                 />
@@ -79,6 +79,9 @@ function Home() {
               <Sponcer title={"Silver Sponsors"}>
                 <SponcerCard
                   imageUrl={"/Images/sponsors/NT LOGO.png"}
+                />
+                <SponcerCard
+                  imageUrl={"/Images/sponsors/Edge Vertical Logo.png"}
                 />
               </Sponcer>
             </div>
