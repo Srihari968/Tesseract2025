@@ -88,6 +88,12 @@ function Home() {
                 width="max-w-[300px]" 
               />
             </Sponcer>
+            <Sponcer title={"Bronze Sponsor"}>
+              <SponcerCard
+                imageUrl={"/Images/sponsors/CloudDefenseLogo.png"}
+                width="max-w-[300px]" 
+              />
+            </Sponcer>
             </div>
           </div>
         </section>

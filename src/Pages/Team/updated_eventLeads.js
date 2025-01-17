@@ -13,19 +13,6 @@ const eventsData = [
     ]
   },
   {
-    "name": "Cosmic Connect",
-    "members": [
-      {
-        "name": "Rohit Garg",
-        "image": "https://drive.google.com/thumbnail?id=17bDbbSZgJ1Njx7vpeO83h6ebkvr-dQEV",
-        "email": "astronomyclub@iitdh.ac.in",
-        "linkedin": "www.linkedin.com/in/dev-rohitgarg",
-        "twitter": "",
-        "instagram": "garg.rohit_"
-      }
-    ]
-  },
-  {
     "name": "Stonkz 3.0",
     "members": [
       {

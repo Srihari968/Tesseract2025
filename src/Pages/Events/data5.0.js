@@ -65,13 +65,5 @@ const data = [
     location: "Online",
     timing: "TBD",
   },
-  {
-    heading: "Cosmic Connect",
-    content: `An Astronomy Exploration Workshop at PARSEC 5.0, IIT Dharwad's annual technological symposium, invites you to embark on an enlightening journey through the cosmos. This unique workshop blends foundational learning with practical stargazing, offering participants a chance to explore celestial wonders through telescopes and binoculars in a hands-on outdoor session. With engaging classroom discussions, a thrilling rapid-fire quiz on telescope functionalities, and exciting prizes, this event promises an unforgettable experience for astronomy enthusiasts. All participants will receive certificates and goodies, with special recognition for winning teams. Join us to ignite your curiosity and connect with the stars!`,
-    image: "/Images/Events/cosmicconnect-for-site.png",
-    registrationLink: "",
-    location: "PC IIT Dharwad",
-    timing: "TBD",
-  },
 ];
 export default data;
