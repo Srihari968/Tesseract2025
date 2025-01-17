@@ -72,22 +72,25 @@ function Home() {
             </div>
             <div className="mt-10">
             <Sponcer title={"Title Sponsor"}>
-                <SponcerCard
-                  imageUrl={"/Images/sponsors/Title_sponser.jpg"}
-                />
-              </Sponcer>
-              <Sponcer title={"Silver Sponsors"}>
-                <SponcerCard
-                  imageUrl={"/Images/sponsors/NT LOGO.png"}
-                />
-                <SponcerCard
-                  imageUrl={"/Images/sponsors/Edge Vertical Logo.png"}
-                />
-              </Sponcer>
+              <SponcerCard
+                imageUrl={"/Images/sponsors/Title_sponser.jpg"}
+                width="max-w-[500px]" 
+              />
+            </Sponcer>
+
+            <Sponcer title={"Silver Sponsors"}>
+              <SponcerCard
+                imageUrl={"/Images/sponsors/NT LOGO.png"}
+                width="max-w-[300px]" 
+              />
+              <SponcerCard
+                imageUrl={"/Images/sponsors/Edge Vertical Logo.png"}
+                width="max-w-[300px]" 
+              />
+            </Sponcer>
             </div>
           </div>
         </section>
-
         <section className="relative">
           <div id="animate-5" className="w-full h-[800px]"></div>
           <div className="w-full h-[200px]"></div>
