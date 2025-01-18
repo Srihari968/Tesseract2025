@@ -40,6 +40,21 @@ function Cultural() {
                   <div></div>
                 </div>
               </div>
+              <div className="flex justify-center">
+                <div className="mt-1">
+                  <a
+                    href={"https://forms.gle/cm6M3zZFAVxjXH9E6"}
+                    target="_blank"
+                  >
+                    <button
+                      type="button"
+                      className=" text-white bg-gradient-to-br from-yellow-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 rounded-lg text-sm px-5 py-2.5 text-center font-hero font-semibold"
+                    >
+                      Reserve your Seat!
+                    </button>
+                  </a>
+                </div>
+              </div>
               {/* <div>
                 <div className="w-full text-center font-semibold">
                   Book Tickets
@@ -49,7 +64,7 @@ function Cultural() {
                     <div className="mt-1">
                       <a
                         href={
-                          "https://docs.google.com/forms/d/e/1FAIpQLSd5Vuq4MzQY6UbjawkyBbVLJDZ0Ojop-DoMnKV5XYdFzNDwjA/viewform"
+                          "https://forms.gle/cm6M3zZFAVxjXH9E6"
                         }
                         target="_blank"
                       >
@@ -153,10 +168,10 @@ function Cultural() {
                   </div>
                 </div>
               </div>
-              {/* <div className="flex justify-center">
+              <div className="flex justify-center">
                 <div className="mt-1">
                   <a
-                    href={"https://forms.gle/xa2F5HzvNeexreD78"}
+                    href={"https://forms.gle/hUuYf5wyGK6UKVEj6"}
                     target="_blank"
                   >
                     <button
@@ -167,7 +182,7 @@ function Cultural() {
                     </button>
                   </a>
                 </div>
-              </div> */}
+              </div>
             </div>
             <div
               className="
