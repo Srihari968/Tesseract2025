@@ -9,7 +9,6 @@ export default function FormPage() {
     mobileNumber: "",
     accommodation: "",
   });
-
   const [userId, setUserId] = useState(null); // Stores the Google ID
   const [submissionStatus, setSubmissionStatus] = useState(null); // Track form submission status
   const location = useLocation();
@@ -64,7 +63,7 @@ console.log("Payload:", payload);
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gradient-to-br from-blue-600 to-purple-400">
+    <div className="flex justify-center items-center h-screen">
       <form
         onSubmit={handleSubmit}
         className="bg-gray-800/40 backdrop-blur-lg p-8 rounded-lg shadow-lg w-full max-w-md"

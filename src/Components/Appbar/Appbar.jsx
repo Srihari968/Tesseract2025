@@ -1,16 +1,45 @@
 import { useEffect, useRef, useState } from "react"
-import { Link } from "react-router-dom"
 import NavButton from "../NavButton/NavButton"
 import NavTile from "../NavTile/NavTile"
 import GSAP from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 import { HiOutlineChevronDown } from "react-icons/hi"
+import { Link,useLocation,useNavigate  } from "react-router-dom";
 
 GSAP.registerPlugin(ScrollTrigger)
 function Appbar({ current }) {
   const [mobileNavActive, setMobileNavActive] = useState(false)
+  const [userId, setUserId] = useState(null);
+  const [parsecId, setParsecId] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
   const scrollContainer = document.getElementById("main-content")
   const scrollProgress = useRef()
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const googleId = queryParams.get("googleId");
+    const parsecIdValue = queryParams.get("parsecId");
+
+    if (googleId) {
+      setUserId(googleId);
+      localStorage.setItem("googleId", googleId);
+    } else {
+      const storedGoogleId = localStorage.getItem("googleId");
+      if (storedGoogleId) {
+        setUserId(storedGoogleId);
+      }
+    }
+
+    if (parsecIdValue) {
+      setParsecId(parsecIdValue);
+      localStorage.setItem("parsecId", parsecIdValue);
+    } else {
+      const storedParsecId = localStorage.getItem("parsecId");
+      if (storedParsecId) {
+        setParsecId(storedParsecId);
+      }
+    }
+  }, [location]);
 
   useEffect(() => {
     if (!scrollContainer && !scrollProgress.current) return
@@ -82,8 +111,11 @@ function Appbar({ current }) {
               </Link>
             </div>
             <div className="ml-4">
-              <Link to="/login">
-                <NavButton content="Login" isActive={current === "login"} />
+              <Link to={
+                userId && parsecId
+                ? `/forms?googleId=${userId}&parsecId=${parsecId}`: "/login"
+              }>
+                <NavButton content={userId ? "Form" : "Login"} isActive={current === "login"} />
               </Link>
             </div>
           </div>
@@ -142,10 +174,13 @@ function Appbar({ current }) {
             </Link>
           </div>
           <div>
-            <Link to="/login">
+            <Link to={
+              userId && parsecId
+              ? `/forms?googleId=${userId}&parsecId=${parsecId}`: "/login"
+            }>
               <NavTile
                 onClick={() => setMobileNavActive(false)}
-                content="Login"
+                content={userId ? "Form" : "Login"}
                 isActive={current === "login"}
               />
             </Link>
