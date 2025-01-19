@@ -6,6 +6,7 @@ import Team from "./Pages/Team/Team"
 import Cultural from "./Pages/Cultural/Cultural"
 import LoginSignupPage from "./Pages/Login/login"
 import FormPage from "./Pages/Forms/Form"
+import Schedule from "./Pages/Schedule/Schedule"
 
 const Views = () => {
   return (
@@ -13,6 +14,7 @@ const Views = () => {
       <Route path="/" element={<Layout />}>
         <Route path="home" element={<Home />} />
         <Route path="events" element={<Events />} />
+        <Route path="schedule" element={<Schedule />} />
         <Route path="team" element={<Team />} />
         <Route path="cultural" element={<Cultural />} />
         <Route path="login" element={<LoginSignupPage/>}/>
