@@ -94,8 +94,8 @@ function Appbar({ current }) {
           </div>
         </div>
         <div
-          className={`nav-mobile-options h-0 overflow-hidden md:hidden ${
-            mobileNavActive && "h-60"
+          className={`nav-mobile-options h-100 overflow-hidden md:hidden ${
+            mobileNavActive && "h-100"
           } ease-in-out duration-300`}
           style={{ transformOrigin: "left top" }}
         >
@@ -114,6 +114,15 @@ function Appbar({ current }) {
                 onClick={() => setMobileNavActive(false)}
                 content="Events"
                 isActive={current === "events"}
+              />
+            </Link>
+          </div>
+          <div>
+            <Link to="/schedule">
+              <NavTile
+                onClick={() => setMobileNavActive(false)}
+                content="Schedule"
+                isActive={current === "schedule"}
               />
             </Link>
           </div>
