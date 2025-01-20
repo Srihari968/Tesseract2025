@@ -1,45 +1,16 @@
 import { useEffect, useRef, useState } from "react"
+import { Link } from "react-router-dom"
 import NavButton from "../NavButton/NavButton"
 import NavTile from "../NavTile/NavTile"
 import GSAP from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 import { HiOutlineChevronDown } from "react-icons/hi"
-import { Link,useLocation,useNavigate  } from "react-router-dom";
 
 GSAP.registerPlugin(ScrollTrigger)
 function Appbar({ current }) {
   const [mobileNavActive, setMobileNavActive] = useState(false)
-  const [userId, setUserId] = useState(null);
-  const [parsecId, setParsecId] = useState(null);
-  const location = useLocation();
-  const navigate = useNavigate();
   const scrollContainer = document.getElementById("main-content")
   const scrollProgress = useRef()
-  useEffect(() => {
-    const queryParams = new URLSearchParams(location.search);
-    const googleId = queryParams.get("googleId");
-    const parsecIdValue = queryParams.get("parsecId");
-
-    if (googleId) {
-      setUserId(googleId);
-      localStorage.setItem("googleId", googleId);
-    } else {
-      const storedGoogleId = localStorage.getItem("googleId");
-      if (storedGoogleId) {
-        setUserId(storedGoogleId);
-      }
-    }
-
-    if (parsecIdValue) {
-      setParsecId(parsecIdValue);
-      localStorage.setItem("parsecId", parsecIdValue);
-    } else {
-      const storedParsecId = localStorage.getItem("parsecId");
-      if (storedParsecId) {
-        setParsecId(storedParsecId);
-      }
-    }
-  }, [location]);
 
   useEffect(() => {
     if (!scrollContainer && !scrollProgress.current) return
@@ -69,22 +40,12 @@ function Appbar({ current }) {
         style={{ zIndex: 100 }}
       >
         <div className="mx-auto max-w-page_lg flex items-center justify-between px-4 h-20">
-          <div className="md:w-1/4 flex items-center space-x-4">
-            <a href="https://iitdh.ac.in">
-            <img
-              src="/IIT dh logo.png"
-              alt="parsec logo"
-              className="sm:w-[69.6px] sm:h-[60px] w-[52.3px] h-[45.09px]"
-            />
-            </a>
-            <div className="w-[2px] h-[36px] bg-white"></div>
-            <a href="/home">
+          <div className="md:w-1/4">
             <img
               src="/Images/parsec-logo.png"
               alt="parsec logo"
-              className="sm:w-[auto] sm:h-[36px] w-[auto] h-[27px]"
+              className="sm:w-[150px] sm:h-[36px] w-[100px] h-[27px]"
             />
-            </a>
           </div>
           <div className="nav-options-desktop flex items-center justify-end md:w-3/4 max-[768px]:hidden">
             <div className="ml-4">
@@ -116,11 +77,8 @@ function Appbar({ current }) {
               </Link>
             </div>
             <div className="ml-4">
-              <Link to={
-                userId && parsecId
-                ? `/forms?googleId=${userId}&parsecId=${parsecId}`: "/login"
-              }>
-                <NavButton content={userId ? "Form" : "Login"} isActive={current === "login"} />
+              <Link to="/login">
+                <NavButton content="Login" isActive={current === "login"} />
               </Link>
             </div>
           </div>
@@ -137,7 +95,7 @@ function Appbar({ current }) {
         </div>
         <div
           className={`nav-mobile-options h-0 overflow-hidden md:hidden ${
-            mobileNavActive && "h-72"
+            mobileNavActive && "h-60"
           } ease-in-out duration-300`}
           style={{ transformOrigin: "left top" }}
         >
@@ -160,15 +118,6 @@ function Appbar({ current }) {
             </Link>
           </div>
           <div>
-            <Link to="/schedule">
-              <NavTile
-                onClick={() => setMobileNavActive(false)}
-                content="Schedule"
-                isActive={current === "schedule"}
-              />
-            </Link>
-          </div>
-          <div>
             <Link to="/team">
               <NavTile
                 onClick={() => setMobileNavActive(false)}
@@ -187,13 +136,10 @@ function Appbar({ current }) {
             </Link>
           </div>
           <div>
-            <Link to={
-              userId && parsecId
-              ? `/forms?googleId=${userId}&parsecId=${parsecId}`: "/login"
-            }>
+            <Link to="/login">
               <NavTile
                 onClick={() => setMobileNavActive(false)}
-                content={userId ? "Form" : "Login"}
+                content="Login"
                 isActive={current === "login"}
               />
             </Link>
