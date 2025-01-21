@@ -39,13 +39,23 @@ function Appbar({ current }) {
         className="container fixed top-0 left-0 max-w-full backdrop-blur-sm bg-black bg-opacity-10"
         style={{ zIndex: 100 }}
       >
-        <div className="mx-auto max-w-page_lg flex items-center justify-between px-4 h-20">
-          <div className="md:w-1/4">
+        <div className="mx-auto max-w-page_lg flex items-center justify-between px-4 h-20"> 
+          <div className="md:w-1/4 flex items-center space-x-4">
+            <a href="https://iitdh.ac.in">
+            <img
+              src="/IIT dh logo.png"
+              alt="parsec logo"
+              className="sm:w-[69.6px] sm:h-[60px] w-[52.3px] h-[45.03px]"
+            />
+            </a>
+            <div className="w-[2px] h-[36px] bg-white"></div>
+            <a href="/home">
             <img
               src="/Images/parsec-logo.png"
               alt="parsec logo"
-              className="sm:w-[150px] sm:h-[36px] w-[100px] h-[27px]"
+              className="sm:w-[auto] sm:h-[36px] w-[auto] h-[27px]"
             />
+            </a>
           </div>
           <div className="nav-options-desktop flex items-center justify-end md:w-3/4 max-[768px]:hidden">
             <div className="ml-4">
@@ -95,7 +105,7 @@ function Appbar({ current }) {
         </div>
         <div
           className={`nav-mobile-options h-100 overflow-hidden md:hidden ${
-            mobileNavActive && "h-100"
+            mobileNavActive && "h-0"
           } ease-in-out duration-300`}
           style={{ transformOrigin: "left top" }}
         >
