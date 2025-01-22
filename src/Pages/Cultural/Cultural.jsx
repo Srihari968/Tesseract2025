@@ -163,7 +163,11 @@ function Cultural() {
                     </span>
                     <span className="flex py-1 px-2 items-center my-2">
                       <FaClock />
-                      <span className="ml-2">DJ - 5:00 PM Onwards</span>
+                      <span className="ml-2">Red Alert - Band - 5:00 PM Onwards</span>
+                    </span>
+                    <span className="flex py-1 px-2 items-center my-2">
+                      <FaClock />
+                      <span className="ml-2">DJ - 6:00 PM Onwards</span>
                     </span>
                   </div>
                 </div>
