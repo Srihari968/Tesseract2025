@@ -105,7 +105,7 @@ function Appbar({ current }) {
         </div>
         <div
           className={`nav-mobile-options h-100 overflow-hidden md:hidden ${
-            mobileNavActive && "h-0"
+            !mobileNavActive && "h-0"
           } ease-in-out duration-300`}
           style={{ transformOrigin: "left top" }}
         >
