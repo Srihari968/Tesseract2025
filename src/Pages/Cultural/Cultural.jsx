@@ -175,14 +175,14 @@ function Cultural() {
               <div className="flex justify-center">
                 <div className="mt-1">
                   <a
-                    href={"https://forms.gle/hUuYf5wyGK6UKVEj6"}
+                    href={"https://forms.gle/rnbBspnpU5SLCatV7"}
                     target="_blank"
                   >
                     <button
                       type="button"
                       className=" text-white bg-gradient-to-br from-yellow-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 rounded-lg text-sm px-5 py-2.5 text-center font-hero font-semibold"
                     >
-                      Book Passes
+                      Get Passes
                     </button>
                   </a>
                 </div>
