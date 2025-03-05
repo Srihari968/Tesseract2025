@@ -11,7 +11,7 @@ import fragFunctions from "./shaders/morphFragFunctions.glsl"
 GSAP.registerPlugin(ScrollTrigger)
 function Morph() {
   const rocketMesh = useGLTF("/Models/rocket.glb").nodes["Rocket"]
-  const earthMesh = useGLTF("/Models/earth.glb").nodes["earth"]
+  const earthMesh = useGLTF("/Models/rocket.glb").nodes["Rocket"]
   const logoMesh = useGLTF("/Models/iitdhLogo.glb").nodes["path12"]
 
   const meshes = [earthMesh, rocketMesh, logoMesh]
@@ -292,7 +292,10 @@ function Morph() {
 
   return (
     <>
-      <group ref={globalRef}>
+    /
+      {/*
+        uncomment this block to add the 3d figures in the bg
+       <group ref={globalRef}>
         <group ref={localRef}>
           <R3FPointsFX
             modelsArray={meshes}
@@ -311,7 +314,7 @@ function Morph() {
                 name: "aRandom",
                 array: randomArray,
                 itemSize: 3,
-              },
+              },events
             ]}
             pointsFragFunctions={fragFunctions}
             pointsVertFunctions={vertFunctions}
@@ -321,7 +324,7 @@ function Morph() {
             alpha={1.2}
           />
         </group>
-      </group>
+      </group> */}
     </>
   )
 }

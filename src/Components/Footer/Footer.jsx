@@ -41,7 +41,7 @@ const Footer = () => {
             <a href="mailto:gstech@iitdh.ac.in">gstech@iitdh.ac.in</a>
           </div>
         </div>
-        <div className="my-4 flex flex-col items-center lg:items-end justify-center">
+        {/* <div className="my-4 flex flex-col items-center lg:items-end justify-center">
           <div className="font-semibold text-xl">Social</div>
           <div className="flex mt-4">
             <a
@@ -75,7 +75,7 @@ const Footer = () => {
           <div className="mt-8 lg:text-right text-xs">
             © Copyright - 2025 Parsec 5.0 all rights reserved
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

@@ -13,30 +13,29 @@ function Home() {
           <div className="flex flex-col custom-width:flex-row items-center justify-center custom-width:justify-between h-full px-4 custom-width:px-8 gap-4 custom-width:gap-0">
             <div className="text-center custom-width:text-left w-full custom-width:w-auto flex flex-col items-start space-y-2 flex-shrink-0">
               <div className="w-full text-4xl custom-width:text-8xl font-semibold font-hero">
-                Parsec 5.0
+                Tesseract
               </div>
               <div className="w-full text-3xl custom-width:text-7xl font-medium">
-                Annual techfest,
+                Annual TechExpo,
                 <div className="w-full">
                   <span className="gradient-text">IIT</span> Dharwad
                 </div>
               </div>
-              <div className="w-full text-lg text-center custom-width:text-left custom-width:text-2xl">31st Jan - 2nd Feb, 2025</div>
+              <div className="w-full text-lg text-center custom-width:text-left custom-width:text-2xl">12th - 13th April  2025</div>
             </div>
             <div className="w-auto text-center custom-width:text-right mt-4 custom-width:mt-0 flex-shrink-0 text-3xl sm:text-4xl custom-width:text-5xl">
-              <Countdown eventDate="2025-01-31T00:00:00" />
+              {/* <Countdown eventDate="2025-04-12T00:00:00" /> */}
             </div>
           </div>
         </div>
           <div className="relative">
             <div className="max-w-[1000px] text-xl rounded-2xl mx-auto my-28 p-8 bg-[#000006] bg-opacity-80">
-              Witness the collision of genius minds and cutting-edge technology
-              at IIT Dharwad's most electrifying{" "}
-              <span className="gradient-text">Technical Fest - Parsec 5.0</span>
-              , a rendezvous with the future! Get ready to dive into the sea of
-              circuits & algorithms, machines & robots, bytes and bits, zeroes &
-              ones. Let your imagination and innovation take flight in this
-              celebration of brilliance and creativity.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore 
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut a
+            liquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui off
+            icia deserunt mollit anim id est laborum.
+
             </div>
           </div>
         </section>
@@ -50,12 +49,8 @@ function Home() {
               </div>
               <div className="text-xl mt-4 rounded-2xl p-8 bg-black bg-opacity-80">
                 <div>
-                  Parsec offers an incredible stage for emerging technologists to display
-                  their expertise and bring innovative ideas to life. Packed with events, 
-                  competitions, workshops, and keynote sessions, it seeks to ignite a passion 
-                  for technology and business in the brightest minds across the nation. 
-                  Beyond the tech buzz, Parsec creates a vibrant experience with engaging cultural activities. 
-                  Join this one-of-a-kind technocultural fest to explore, innovate, and have a fantastic time!
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
                 </div>
               </div>
             </div>
@@ -65,7 +60,7 @@ function Home() {
           <div className="w-full h-[800px]"></div>
         </section>
 
-        <section className="relative">
+        {/* <section className="relative">
           <div id="animate-4">
             <div className="text-4xl md:text-5xl font-semibold font-hero text-center">
               Our Sponsors
@@ -96,8 +91,8 @@ function Home() {
             </Sponcer>
             </div>
           </div>
-        </section>
-        <section className="relative">
+        </section> */}
+        {/* <section className="relative">
           <div id="animate-5" className="w-full h-[800px]"></div>
           <div className="w-full h-[200px]"></div>
           <div id="animate-6">
@@ -165,7 +160,7 @@ function Home() {
             </div>
           </div>
           <div className="w-full h-[100px]"></div>
-        </section>
+        </section> */}
       </div>
     </>
   );

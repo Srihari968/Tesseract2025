@@ -73,7 +73,7 @@ function StaticParticlesV2() {
 
   return (
     <>
-      <group ref={globalRef} position={[0, 0, -21]}>
+      {/* <group ref={globalRef} position={[0, 0, -21]}>
         <group ref={localRef}>
           <R3FPointsFX
             modelsArray={meshes}
@@ -100,7 +100,7 @@ function StaticParticlesV2() {
             ref={pointsRef}
           />
         </group>
-      </group>
+      </group> */}
     </>
   )
 }

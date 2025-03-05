@@ -48,14 +48,14 @@ function Appbar({ current }) {
               className="sm:w-[69.6px] sm:h-[60px] w-[52.3px] h-[45.03px]"
             />
             </a>
-            <div className="w-[2px] h-[36px] bg-white"></div>
-            <a href="/home">
+            {/* <div className="w-[2px] h-[36px] bg-white"></div> */}
+            {/* <a href="/home">
             <img
               src="/Images/parsec-logo.png"
               alt="parsec logo"
               className="sm:w-[auto] sm:h-[36px] w-[auto] h-[27px]"
             />
-            </a>
+            </a> */}
           </div>
           <div className="nav-options-desktop flex items-center justify-end md:w-3/4 max-[768px]:hidden">
             <div className="ml-4">
@@ -78,14 +78,7 @@ function Appbar({ current }) {
                 <NavButton content="Team" isActive={current === "team"} />
               </Link>
             </div>
-            <div className="ml-4">
-              <Link to="/cultural">
-                <NavButton
-                  content="Cultural"
-                  isActive={current === "cultural"}
-                />
-              </Link>
-            </div>
+            
             <div className="ml-4">
               <Link to="/login">
                 <NavButton content="Login" isActive={current === "login"} />

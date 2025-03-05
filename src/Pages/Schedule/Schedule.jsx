@@ -47,7 +47,7 @@ const Schedule = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://docs.google.com/spreadsheets/d/e/2PACX-1vRqUVXntmIJ1-m3bdQUDaUUZuHKY6nV0-342V0JDslFaQeVaz0n08w9yBhlzRmXsyAYnbVbeD_CQt1N/pub?output=csv",
+          "https://docs.google.com/spreadsheets/d/e/2PACX-1vSp8BCLTca6LDqWL3ELdwpPNibwmFEiV3IwYxPmI-gE4FBxCg9uIsWpdf1POJegkxHcogcID7p5BfmP/pub?output=csv",
           { responseType: "blob" }
         );
 
