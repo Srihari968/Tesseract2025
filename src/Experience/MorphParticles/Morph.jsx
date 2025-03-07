@@ -15,8 +15,8 @@ function Morph() {
   console.log(test.nodes);    
   const rocketMesh = test.nodes["Rocket"]
   const earthMesh = useGLTF("/Models/earth.glb").nodes["earth"]
-  const logoMesh = useGLTF("/Models/untitled.glb").nodes["Cube"];
- // console.log(logoMesh.nodes);
+  const logoMesh = useGLTF("/Models/T_with_inc_vertices.glb").nodes["Cube001"];
+  //console.log(logoMesh.nodes);
 
 
   const meshes = [logoMesh, rocketMesh, logoMesh]
@@ -47,7 +47,7 @@ function Morph() {
   }
 
   const randomArray = useMemo(() => {
-    return generateRandomnArray(128)
+    return generateRandomnArray(2560)
   }, [])
 
   //movement curve for rocket
