@@ -9,6 +9,7 @@ import FormPage from "./Pages/Forms/Form"
 import Schedule from "./Pages/Schedule/Schedule"
 import AlertPage from '../src/Components/AlertPage'
 import ProtectedRoute from './middleware/ProtectedRoute';
+import Register from "./Pages/Register/Register"
 const Views = () => {
   return (
     <Routes>
@@ -20,6 +21,7 @@ const Views = () => {
         <Route path="cultural" element={<Cultural />} />
         <Route path="login" element={<LoginSignupPage/>}/>
         <Route path="forms" element={<FormPage/>}/>
+        <Route path="Register" element={<Register />}/>
 		<Route 
 		          path="alert" 
 		          element={

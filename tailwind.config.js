@@ -12,6 +12,8 @@ export default {
       },
       fontFamily: {
         hero: ["Orbitron", "Poppins", "sans-serif"],
+        vt323: ["VT323", "Poppins", "sans-serif"],
+        ibm: ['IBM Plex Sans', 'sans-serif'],
       },
       boxShadow: {
         medium:

@@ -3,7 +3,7 @@ import { useEffect } from "react"
 
 function App() {
   useEffect(() => {
-    document.title = "Parsec 2025"
+    document.title = "Tesseract 2025"
  }, []);
   return (
     <>

@@ -1,19 +1,21 @@
-import { useEffect, useRef, useState } from "react"
-import { Link } from "react-router-dom"
-import NavButton from "../NavButton/NavButton"
-import NavTile from "../NavTile/NavTile"
-import GSAP from "gsap"
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-import { HiOutlineChevronDown } from "react-icons/hi"
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import NavButton from "../NavButton/NavButton";
+import NavTile from "../NavTile/NavTile";
+import GSAP from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { HiOutlineChevronDown } from "react-icons/hi";
+import { Helmet } from "react-helmet";
 
-GSAP.registerPlugin(ScrollTrigger)
+GSAP.registerPlugin(ScrollTrigger);
+
 function Appbar({ current }) {
-  const [mobileNavActive, setMobileNavActive] = useState(false)
-  const scrollContainer = document.getElementById("main-content")
-  const scrollProgress = useRef()
+  const [mobileNavActive, setMobileNavActive] = useState(false);
+  const scrollContainer = document.getElementById("main-content");
+  const scrollProgress = useRef();
 
   useEffect(() => {
-    if (!scrollContainer && !scrollProgress.current) return
+    if (!scrollContainer && !scrollProgress.current) return;
     const ctx = GSAP.context(() => {
       const progressTimeLine = GSAP.timeline({
         scrollTrigger: {
@@ -23,39 +25,34 @@ function Appbar({ current }) {
           end: "bottom bottom",
           scrub: 1,
         },
-      })
+      });
 
       progressTimeLine.from(scrollProgress.current, {
         scaleX: 0,
-      })
-    })
+      });
+    });
 
-    return () => ctx.revert()
-  }, [current])
+    return () => ctx.revert();
+  }, [current]);
 
   return (
     <>
+      <Helmet>
+        <title>Tesseract - {current.charAt(0).toUpperCase() + current.slice(1)}</title>
+      </Helmet>
       <div
-        className="container fixed top-0 left-0 max-w-full backdrop-blur-sm bg-black bg-opacity-10"
+        className="container fixed top-0 left-0 max-w-full backdrop-blur-sm bg-gradient-to-r from-purple-600 to-blue-600 text-white"
         style={{ zIndex: 100 }}
       >
-        <div className="mx-auto max-w-page_lg flex items-center justify-between px-4 h-20"> 
+        <div className="mx-auto max-w-page_lg flex items-center justify-between px-4 h-20">
           <div className="md:w-1/4 flex items-center space-x-4">
             <a href="https://iitdh.ac.in">
-            <img
-              src="/IIT dh logo.png"
-              alt="parsec logo"
-              className="sm:w-[69.6px] sm:h-[60px] w-[52.3px] h-[45.03px]"
-            />
+              <img
+                src="/IIT dh logo.png"
+                alt="parsec logo"
+                className="sm:w-[69.6px] sm:h-[60px] w-[52.3px] h-[45.03px]"
+              />
             </a>
-            {/* <div className="w-[2px] h-[36px] bg-white"></div> */}
-            {/* <a href="/home">
-            <img
-              src="/Images/parsec-logo.png"
-              alt="parsec logo"
-              className="sm:w-[auto] sm:h-[36px] w-[auto] h-[27px]"
-            />
-            </a> */}
           </div>
           <div className="nav-options-desktop flex items-center justify-end md:w-3/4 max-[768px]:hidden">
             <div className="ml-4">
@@ -78,10 +75,9 @@ function Appbar({ current }) {
                 <NavButton content="Team" isActive={current === "team"} />
               </Link>
             </div>
-            
             <div className="ml-4">
-              <Link to="/login">
-                <NavButton content="Login" isActive={current === "login"} />
+              <Link to="/register">
+                <NavButton content="Register" isActive={current === "register"} />
               </Link>
             </div>
           </div>
@@ -90,7 +86,7 @@ function Appbar({ current }) {
               onClick={() => setMobileNavActive(!mobileNavActive)}
               className={`rounded-full mr-4 text-4xl ${
                 mobileNavActive && "rotate-180"
-              } ease-in-out duration-300`}
+              } ease-in-out duration-300 text-white`}
             >
               <HiOutlineChevronDown />
             </button>
@@ -159,14 +155,14 @@ function Appbar({ current }) {
         </div>
         <div className="w-full" style={{ height: "2px" }}>
           <div
-            className="h-full w-full bg-rose-500"
+            className="h-full w-full bg-orange-400"
             style={{ transformOrigin: "left top" }}
             ref={scrollProgress}
           ></div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default Appbar
+export default Appbar;
