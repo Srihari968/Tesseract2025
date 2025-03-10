@@ -15,8 +15,8 @@ export default function Scene({ currentMesh }) {
     <>
       {/* <Perf position="bottom-left" /> */}
       {/* <StaticParticles /> */}
-      <StaticParticlesV2 />
-      {componentToRender}
+      <StaticParticlesV2 /> 
+       {componentToRender}
     </>
   )
 }

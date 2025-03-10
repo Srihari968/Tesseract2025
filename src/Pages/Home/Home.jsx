@@ -1,3 +1,4 @@
+
 import "./Home.css";
 import Tesseract from "../../Components/Tesseract";
 import Sponcer from "../../Components/Sponcers/Sponcer";
@@ -11,7 +12,7 @@ function Home() {
       {/* <div className="h-screen bg-black flex items-center justify-center">
             <Tesseract />
       </div> */}
-      
+
       <div className="mx-auto max-w-page_lg md:px-8 px-4 overflow-hidden">
         <section id="animate-1">
           <div className="relative h-screen w-full pt-16 flex items-center justify-left">
@@ -20,7 +21,6 @@ function Home() {
                 Tesseract
               </div>
               <div className="w-full text-2xl custom-width:text-6xl font-medium text-secondary">
-               
                 <div className="w-full">
                   <span className="gradient-text">IIT Dharwad's</span>
                 </div>
@@ -32,11 +32,16 @@ function Home() {
             </div>
             <div className="relative">
               <div className="max-w-[1000px] text-2xl rounded-2xl  my-28 p-8 bg-[#000000] bg-opacity-90 text-white">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
               </div>
             </div>
           </div>
-          
         </section>
 
         <section>
@@ -46,9 +51,16 @@ function Home() {
               <div className="font-hero text-5xl font-bold md:text-6xl text-center text-primary">
                 About Tesseract
               </div>
-              <div className="text-2xl mt-4 rounded-2xl p-8 bg-[#001f3f] bg-opacity-90 text-white">
+              <div className="text-2xl mt-4 rounded-2xl p-8 bg-[#001f3f] bg-opacity-10 text-white">
                 <div>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
                 </div>
               </div>
             </div>
@@ -58,39 +70,39 @@ function Home() {
           <div className="w-full h-[800px]"></div>
         </section>
 
-        <section className="relative">
+        {/* <section className="relative">
           <div id="animate-4">
             <div className="text-4xl md:text-5xl font-semibold font-hero text-center">
               Our Sponsors
             </div>
             <div className="mt-10">
-            <Sponcer title={"Title Sponsor"}>
-              <SponcerCard
-                imageUrl={"/Images/sponsors/Title_sponser.jpg"}
-                width="max-w-[500px]" 
-              />
-            </Sponcer>
+              <Sponcer title={"Title Sponsor"}>
+                <SponcerCard
+                  imageUrl={"/Images/sponsors/Title_sponser.jpg"}
+                  width="max-w-[500px]"
+                />
+              </Sponcer>
 
-            <Sponcer title={"Silver Sponsors"}>
-              <SponcerCard
-                imageUrl={"/Images/sponsors/NT LOGO.png"}
-                width="max-w-[300px]" 
-              />
-              <SponcerCard
-                imageUrl={"/Images/sponsors/Edge Vertical Logo.png"}
-                width="max-w-[300px]" 
-              />
-            </Sponcer>
-            <Sponcer title={"Bronze Sponsor"}>
-              <SponcerCard
-                imageUrl={"/Images/sponsors/CloudDefenseLogo.png"}
-                width="max-w-[300px]" 
-              />
-            </Sponcer>
+              <Sponcer title={"Silver Sponsors"}>
+                <SponcerCard
+                  imageUrl={"/Images/sponsors/NT LOGO.png"}
+                  width="max-w-[300px]"
+                />
+                <SponcerCard
+                  imageUrl={"/Images/sponsors/Edge Vertical Logo.png"}
+                  width="max-w-[300px]"
+                />
+              </Sponcer>
+              <Sponcer title={"Bronze Sponsor"}>
+                <SponcerCard
+                  imageUrl={"/Images/sponsors/CloudDefenseLogo.png"}
+                  width="max-w-[300px]"
+                />
+              </Sponcer>
             </div>
           </div>
-        </section> 
-         <section className="relative">
+        </section> */}
+        {/* <section className="relative">
           <div id="animate-5" className="w-full h-[800px]"></div>
           <div className="w-full h-[200px]"></div>
           <div id="animate-6">
@@ -158,7 +170,7 @@ function Home() {
             </div>
           </div>
           <div className="w-full h-[100px]"></div>
-        </section>
+        </section> */}
       </div>
     </>
   );

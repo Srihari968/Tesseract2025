@@ -1,4 +1,6 @@
 import { useEffect, useRef, useMemo } from "react"
+import { useThree } from "@react-three/fiber";
+
 import * as THREE from "three"
 import { useGLTF } from "@react-three/drei"
 import { R3FPointsFX } from "r3f-points-fx"
@@ -10,16 +12,26 @@ import fragFunctions from "./shaders/morphFragFunctions.glsl"
 
 GSAP.registerPlugin(ScrollTrigger)
 function Morph() {
-  const test = useGLTF("/Models/rocket.glb")
+
+  const { camera } = useThree();
+
+  // useEffect(() => {
+  //   camera.position.set(0,9, 0); // Adjust this as per your requirement
+  //   camera.lookAt(0, 0, 0);  // Focus camera on the center
+  // }, []);
+  const test = useGLTF("/Models/logofinal.glb")
   console.log("NODES");
   console.log(test.nodes);    
-  const rocketMesh = test.nodes["Rocket"]
-  const earthMesh = useGLTF("/Models/earth.glb").nodes["earth"]
-  const logoMesh = useGLTF("/Models/T_with_inc_vertices.glb").nodes["Cube001"];
+  const rocketMesh = test.nodes["Plane"];
+  const earthMesh = useGLTF("/Models/earth.glb")
+  console.log("NODES@")
+
+  console.log(earthMesh.nodes);
+  const logoMesh = useGLTF("/Models/untitled2.glb").nodes["Cube"];
   //console.log(logoMesh.nodes);
 
 
-  const meshes = [logoMesh, rocketMesh, logoMesh]
+  const meshes = [rocketMesh, logoMesh, rocketMesh]
   const section1 = document.getElementById("animate-1")
   const section2 = document.getElementById("animate-2")
   const section3 = document.getElementById("animate-3")
@@ -53,14 +65,14 @@ function Morph() {
   //movement curve for rocket
   const curve = useMemo(() => {
     return new THREE.CatmullRomCurve3([
-      new THREE.Vector3(
-        -10 * Math.cos(0.5) * Math.sin(0.5),
-        10 * Math.cos(0.5) * Math.cos(0.5),
-        10 * Math.sin(0.5)
-      ),
-      new THREE.Vector3(-2, 3.5, -4),
-      new THREE.Vector3(0, -3, -3),
-      new THREE.Vector3(0, -1, 0),
+      // new THREE.Vector3(
+      //   -10 * Math.cos(0.5) * Math.sin(0.5),
+      //   10 * Math.cos(0.5) * Math.cos(0.5),
+      //   10 * Math.sin(0.5)
+      // ),
+      // new THREE.Vector3(-2, 3.5, -4),
+      // new THREE.Vector3(0, -3, -3),
+      // new THREE.Vector3(0, -1, 0),
       new THREE.Vector3(0, 0, 0),
     ])
   }, [])
@@ -68,6 +80,8 @@ function Morph() {
   //particles transition timelines
   //first
   useEffect(() => {
+    camera.position.set(0,9, 0); // Adjust this as per your requirement
+    camera.lookAt(0, 0, 0);  // Focus camera on the center
     if (morphRef.current) {
       const ctx = GSAP.context(() => {
         const timeline1 = GSAP.timeline({
@@ -149,7 +163,9 @@ function Morph() {
       return
     let mm = GSAP.matchMedia()
     const ctx = GSAP.context(() => {
+      
       const timeline1 = GSAP.timeline({
+        
         scrollTrigger: {
           trigger: section1,
           scroller: "#main",
@@ -157,7 +173,9 @@ function Morph() {
           end: "bottom bottom",
           scrub: 1,
         },
-      })
+        
+      }
+    )
 
       const timeline2 = GSAP.timeline({
         scrollTrigger: {
@@ -194,6 +212,16 @@ function Morph() {
           },
           0
         )
+        // .to(
+        //   camera.position,
+        //   {
+        //     x:0,
+        //     y:0,
+        //     z:10,
+        //     onUpdate: () => camera.lookAt(0, 0, 0),
+        //   },
+        //   0
+        // );
 
       timeline2
         .to(
@@ -318,10 +346,10 @@ function Morph() {
                 itemSize: 3,
               },
             ]}
-            pointsFragFunctions={fragFunctions}
-            pointsVertFunctions={vertFunctions}
+            // pointsFragFunctions={fragFunctions}
+            // pointsVertFunctions={vertFunctions}
             scale={[1, 1, 1]}
-            pointSize={10}
+            pointSize={1}
             pointsCount={100}
             alpha={1.2}
           />
