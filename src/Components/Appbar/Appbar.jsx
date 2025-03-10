@@ -11,11 +11,12 @@ GSAP.registerPlugin(ScrollTrigger);
 
 function Appbar({ current }) {
   const [mobileNavActive, setMobileNavActive] = useState(false);
-  const scrollContainer = document.getElementById("main-content");
   const scrollProgress = useRef();
 
   useEffect(() => {
-    if (!scrollContainer && !scrollProgress.current) return;
+    const scrollContainer = document.getElementById("main-content");
+    if (!scrollContainer || !scrollProgress.current) return;
+
     const ctx = GSAP.context(() => {
       const progressTimeLine = GSAP.timeline({
         scrollTrigger: {
@@ -27,9 +28,7 @@ function Appbar({ current }) {
         },
       });
 
-      progressTimeLine.from(scrollProgress.current, {
-        scaleX: 0,
-      });
+      progressTimeLine.from(scrollProgress.current, { scaleX: 0 });
     });
 
     return () => ctx.revert();
@@ -40,125 +39,39 @@ function Appbar({ current }) {
       <Helmet>
         <title>Tesseract - {current.charAt(0).toUpperCase() + current.slice(1)}</title>
       </Helmet>
-      <div
-        className="container fixed top-0 left-0 max-w-full backdrop-blur-sm bg-gradient-to-r from-purple-600 to-blue-600 text-white"
-        style={{ zIndex: 100 }}
-      >
-        <div className="mx-auto max-w-page_lg flex items-center justify-between px-4 h-20">
-          <div className="md:w-1/4 flex items-center space-x-4">
-            <a href="https://iitdh.ac.in">
-              <img
-                src="/IIT dh logo.png"
-                alt="parsec logo"
-                className="sm:w-[69.6px] sm:h-[60px] w-[52.3px] h-[45.03px]"
-              />
-            </a>
-          </div>
-          <div className="nav-options-desktop flex items-center justify-end md:w-3/4 max-[768px]:hidden">
-            <div className="ml-4">
-              <Link to="/home">
-                <NavButton content="Home" isActive={current === "home"} />
-              </Link>
-            </div>
-            <div className="ml-4">
-              <Link to="/events">
-                <NavButton content="Events" isActive={current === "events"} />
-              </Link>
-            </div>
-            <div className="ml-4">
-              <Link to="/schedule">
-                <NavButton content="Schedule" isActive={current === "schedule"} />
-              </Link>
-            </div>
-            <div className="ml-4">
-              <Link to="/team">
-                <NavButton content="Team" isActive={current === "team"} />
-              </Link>
-            </div>
-            <div className="ml-4">
-              <Link to="/register">
-                <NavButton content="Register" isActive={current === "register"} />
-              </Link>
-            </div>
-          </div>
-          <div className="nav-mobile md:hidden">
-            <button
-              onClick={() => setMobileNavActive(!mobileNavActive)}
-              className={`rounded-full mr-4 text-4xl ${
-                mobileNavActive && "rotate-180"
-              } ease-in-out duration-300 text-white`}
-            >
-              <HiOutlineChevronDown />
-            </button>
-          </div>
+
+      {/* Translucent Pill-Shaped Header */}
+      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-opacity-50 backdrop-blur-lg text-white rounded-full shadow-lg px-6 py-3 max-w-fit flex items-center justify-between space-x-6 transition-all duration-300 z-50">
+        {/* Logo */}
+        <a href="https://iitdh.ac.in">
+          <img src="/IIT dh logo.png" alt="IIT Dharwad" className="w-[52.3px] h-[45.03px]" />
+        </a>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-6">
+          <Link to="/home"><NavButton content="Home" isActive={current === "home"} /></Link>
+          <Link to="/events"><NavButton content="Events" isActive={current === "events"} /></Link>
+          <Link to="/schedule"><NavButton content="Schedule" isActive={current === "schedule"} /></Link>
+          <Link to="/team"><NavButton content="Team" isActive={current === "team"} /></Link>
+          <Link to="/register"><NavButton content="Register" isActive={current === "register"} /></Link>
         </div>
-        <div
-          className={`nav-mobile-options h-100 overflow-hidden md:hidden ${
-            !mobileNavActive && "h-0"
-          } ease-in-out duration-300`}
-          style={{ transformOrigin: "left top" }}
-        >
-          <div>
-            <Link to="/home">
-              <NavTile
-                onClick={() => setMobileNavActive(false)}
-                content="Home"
-                isActive={current === "home"}
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="/events">
-              <NavTile
-                onClick={() => setMobileNavActive(false)}
-                content="Events"
-                isActive={current === "events"}
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="/schedule">
-              <NavTile
-                onClick={() => setMobileNavActive(false)}
-                content="Schedule"
-                isActive={current === "schedule"}
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="/team">
-              <NavTile
-                onClick={() => setMobileNavActive(false)}
-                content="Team"
-                isActive={current === "team"}
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="/cultural">
-              <NavTile
-                onClick={() => setMobileNavActive(false)}
-                content="Cultural Events"
-                isActive={current === "cultural"}
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="/login">
-              <NavTile
-                onClick={() => setMobileNavActive(false)}
-                content="Login"
-                isActive={current === "login"}
-              />
-            </Link>
-          </div>
-        </div>
-        <div className="w-full" style={{ height: "2px" }}>
-          <div
-            className="h-full w-full bg-orange-400"
-            style={{ transformOrigin: "left top" }}
-            ref={scrollProgress}
-          ></div>
+
+        {/* Mobile Menu Button */}
+        <button onClick={() => setMobileNavActive(!mobileNavActive)}
+          className={`md:hidden text-4xl text-white transition-transform duration-300 ${mobileNavActive ? "rotate-180" : ""}`}>
+          <HiOutlineChevronDown />
+        </button>
+      </div>
+
+      {/* Mobile Dropdown Menu */}
+      <div className={`fixed top-16 left-1/2 transform -translate-x-1/2 bg-white text-black bg-opacity-90 rounded-lg shadow-md overflow-hidden transition-all duration-300 ${mobileNavActive ? "h-auto py-4 px-6" : "h-0 py-0 px-0 opacity-0"}`}>
+        <div className="flex flex-col space-y-2">
+          <Link to="/home" onClick={() => setMobileNavActive(false)}><NavTile content="Home" isActive={current === "home"} /></Link>
+          <Link to="/events" onClick={() => setMobileNavActive(false)}><NavTile content="Events" isActive={current === "events"} /></Link>
+          <Link to="/schedule" onClick={() => setMobileNavActive(false)}><NavTile content="Schedule" isActive={current === "schedule"} /></Link>
+          <Link to="/team" onClick={() => setMobileNavActive(false)}><NavTile content="Team" isActive={current === "team"} /></Link>
+          <Link to="/cultural" onClick={() => setMobileNavActive(false)}><NavTile content="Cultural Events" isActive={current === "cultural"} /></Link>
+          <Link to="/login" onClick={() => setMobileNavActive(false)}><NavTile content="Login" isActive={current === "login"} /></Link>
         </div>
       </div>
     </>

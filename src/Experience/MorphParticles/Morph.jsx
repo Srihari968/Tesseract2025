@@ -65,14 +65,14 @@ function Morph() {
   //movement curve for rocket
   const curve = useMemo(() => {
     return new THREE.CatmullRomCurve3([
-      new THREE.Vector3(
-        -10 * Math.cos(0.5) * Math.sin(0.5),
-        10 * Math.cos(0.5) * Math.cos(0.5),
-        10 * Math.sin(0.5)
-      ),
-      new THREE.Vector3(-2, 3.5, -4),
-      new THREE.Vector3(0, -3, -3),
-      new THREE.Vector3(0, -1, 0),
+      // new THREE.Vector3(
+      //   -10 * Math.cos(0.5) * Math.sin(0.5),
+      //   10 * Math.cos(0.5) * Math.cos(0.5),
+      //   10 * Math.sin(0.5)
+      // ),
+      // new THREE.Vector3(-2, 3.5, -4),
+      // new THREE.Vector3(0, -3, -3),
+      // new THREE.Vector3(0, -1, 0),
       new THREE.Vector3(0, 0, 0),
     ])
   }, [])
