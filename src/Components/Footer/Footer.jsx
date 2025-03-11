@@ -35,16 +35,16 @@ const Footer = () => {
         <div className="my-4 flex flex-col items-center justify-center">
           <div className="font-semibold text-xl">Support</div>
           <div className="mt-2">
-            <a href="mailto:outreach.parsec@iitdh.ac.in">sponsor parsec5.0</a>
+            <a href="mailto:outreach.parsec@iitdh.ac.in">Sponsor Tesseract</a>
           </div>
           <div className="mt-2">
             <a href="mailto:gstech@iitdh.ac.in">gstech@iitdh.ac.in</a>
           </div>
         </div>
-        {/* <div className="my-4 flex flex-col items-center lg:items-end justify-center">
+        <div className="my-4 flex flex-col items-center lg:items-end justify-center">
           <div className="font-semibold text-xl">Social</div>
           <div className="flex mt-4">
-            <a
+            {/* <a
               target="_blank"
               className=" text-xl"
               href="https://www.facebook.com/parsec.iitdh"
@@ -52,11 +52,11 @@ const Footer = () => {
               <span className="text-indigo-700 cursor-pointer">
                 <BsFacebook />
               </span>
-            </a>
+            </a> */}
             <a
               target="_blank"
               className="ml-4 text-xl"
-              href="https://www.linkedin.com/company/parsec-iit-dharwad/"
+              href="https://www.linkedin.com/company/tesseract-annual-tech-summit-iit-dharwad"
             >
               <span className="text-blue-500 cursor-pointer">
                 <BsLinkedin />
@@ -65,7 +65,7 @@ const Footer = () => {
             <a
               className="ml-4 text-xl"
               target="_blank"
-              href="https://www.instagram.com/technical.council_iitdh/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA%3D%3D"
+              href="https://www.instagram.com/tesseract.iitdh/"
             >
               <span className="text-pink-500 cursor-pointer">
                 <BsInstagram />
@@ -73,9 +73,9 @@ const Footer = () => {
             </a>
           </div>
           <div className="mt-8 lg:text-right text-xs">
-            © Copyright - 2025 Parsec 5.0 all rights reserved
+            © Copyright - 2025 Tesseract . All rights reserved
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   )

@@ -17,7 +17,7 @@ function Home() {
         <section id="animate-1">
           <div className="relative h-screen w-full pt-16 flex items-center justify-left">
             <div className="text-left w-full flex flex-col items-center space-y-2">
-              <div className="w-full text-3xl custom-width:text-9xl font-bold font-ibm text-primary">
+              <div className="w-full text-3xl custom-width:text-9xl font-bold text-primary">
                 Tesseract
               </div>
               <div className="w-full text-2xl custom-width:text-6xl font-medium text-secondary">
@@ -32,13 +32,7 @@ function Home() {
             </div>
             <div className="relative">
               <div className="max-w-[1000px] text-2xl rounded-2xl  my-28 p-8 bg-[#000000] bg-opacity-90 text-white">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Tesseract is IIT Dharwad's flagship tech summit, bringing together students, industry experts, and innovators for a celebration of technology and innovation. Featuring keynote talks, hands-on workshops, and a cutting-edge tech expo, Tesseract is your gateway to exploring emerging technologies, honing skills, and connecting with the brightest minds in the field. Join us for an inspiring journey into the future of tech!
               </div>
             </div>
           </div>
@@ -48,19 +42,12 @@ function Home() {
           <div className="relative w-full" id="animate-2">
             <div className="w-full h-28"></div>
             <div className="w-full md:w-1/2 mx-auto">
-              <div className="font-hero text-5xl font-bold md:text-6xl text-center text-primary">
+              <div className="font-hero text-5xl font-bold md:text-6xl text-center text-secondary">
                 About Tesseract
               </div>
               <div className="text-2xl mt-4 rounded-2xl p-8 bg-[#001f3f] bg-opacity-10 text-white">
                 <div>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                Tesseract is IIT Dharwad's annual tech summit, a platform for innovation, learning, and collaboration. Featuring keynote talks, hands-on workshops, and a cutting-edge tech expo, the event brings together students, experts, and industry leaders to explore emerging technologies and showcase groundbreaking projects. Join us to dive into the future of tech and connect with the brightest minds in the field!
                 </div>
               </div>
             </div>

@@ -8,19 +8,19 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(to right, #00f2ff, #3de155);
+  /* background: linear-gradient(to right, #00f2ff, #3de155);
   -webkit-background-clip: text;
   -moz-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  background-clip: text; */
+  color: white;
 }
 
 .text-primary {
-  color: #4a90e2;
+  color: #d8d8d8;
 }
 
 .text-secondary {
-  color: #50e3c2;
+  color: #e62c2c;
 }
 
 .text-tertiary {
