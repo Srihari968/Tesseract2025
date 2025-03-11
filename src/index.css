@@ -15,8 +15,8 @@
 }
 
 :root {
-  --primary-color: #c0c6cd;
-  --main: #1a1ae0;
+  --primary-color: #2390f7;
+  --main: #27272a;
   --default-dark: 240 4% 46%;
 }
 
@@ -50,7 +50,7 @@ html {
 
 body {
   color: #fff;
-  background-color: #1f1fdb;
+  background-color: #000006;
   font-family: "Open Sans", sans-serif;
 }
 

@@ -13,12 +13,22 @@ import fragFunctions from "./shaders/morphFragFunctions.glsl"
 GSAP.registerPlugin(ScrollTrigger)
 function Morph() {
 
-  const { camera } = useThree();
+  // const fov = 90;
+	// const aspect = 2; // the canvas default
+	// const near = 0.1;
+	// const far = 100;
+	// const camera = new THREE.PerspectiveCamera( fov, aspect, near, far );
+  // camera.position.set( 0, 0, 10 );
+  const {camera} = useThree();
+  camera.position.set(0,9, 0); // Adjust this as per your requirement
+  camera.lookAt(0, 0, 0);  // Focus camera on the center
 
-  // useEffect(() => {
-  //   camera.position.set(0,9, 0); // Adjust this as per your requirement
-  //   camera.lookAt(0, 0, 0);  // Focus camera on the center
-  // }, []);
+
+  useEffect(() => {
+    camera.position.set(0,9, 0); // Adjust this as per your requirement
+    camera.lookAt(0, 0, 0);  // Focus camera on the center
+    console.log("CAMERA");
+  }, []);
   const test = useGLTF("/Models/logofinal.glb")
   console.log("NODES");
   console.log(test.nodes);    
@@ -172,6 +182,10 @@ function Morph() {
           start: "top top",
           end: "bottom bottom",
           scrub: 1,
+          onEnter: () => {
+            camera.position.set(0, 9, 0);
+            camera.lookAt(0, 0, 0);
+          },
         },
         
       }
@@ -184,6 +198,10 @@ function Morph() {
           start: "top bottom",
           end: "bottom bottom",
           scrub: 1,
+          onEnter: () => {
+            camera.position.set(0, 9, 0);
+            camera.lookAt(0, 0, 0);
+          },
         },
       })
 
@@ -299,6 +317,10 @@ function Morph() {
           start: "top bottom-=100px",
           end: "bottom bottom",
           scrub: 1,
+          onEnter: () => {
+            camera.position.set(0, 9, 0);
+            camera.lookAt(0, 0, 0);
+          },
         },
       })
 
