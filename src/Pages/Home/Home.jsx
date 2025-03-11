@@ -30,11 +30,11 @@ function Home() {
                 12th - 13th April 2025
               </div>
             </div>
-            <div className="relative">
+            {/* <div className="relative">
               <div className="max-w-[1000px] text-2xl rounded-2xl  my-28 p-8 bg-[#000000] bg-opacity-90 text-white">
                 Tesseract is IIT Dharwad's flagship tech summit, bringing together students, industry experts, and innovators for a celebration of technology and innovation. Featuring keynote talks, hands-on workshops, and a cutting-edge tech expo, Tesseract is your gateway to exploring emerging technologies, honing skills, and connecting with the brightest minds in the field. Join us for an inspiring journey into the future of tech!
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
 
