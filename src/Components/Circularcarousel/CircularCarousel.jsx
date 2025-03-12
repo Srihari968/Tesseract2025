@@ -36,7 +36,7 @@ const CircularCarousel = () => {
       setSelectedDescription(image.description);
     },
   }));
-
+  console.log("Slides",slides, typeof(slides));
   const handleNavigation = (newIndex) => {
     setIndex(newIndex);
     setSelectedDescription("");

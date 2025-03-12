@@ -1,49 +1,47 @@
 .carousel-container {
-    width: 450px;
-    height: 550px;
-    margin: auto;
-    position: relative;
-    text-align: center;
-    padding: 20px;
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+.carousel-button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.carousel-button:hover {
+  background-color: #357ab8;
+}
+
+.description-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    display: none; /* Hide carousel on mobile screens */
   }
-  
-  .carousel-img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+
+  .stacked-events {
+    display: block; /* Show stacked events on mobile screens */
   }
-  
-  .button-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+}
+
+@media (min-width: 769px) {
+  .stacked-events {
+    display: none; /* Hide stacked events on larger screens */
   }
-  
-  .carousel-button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.3s ease;
-  }
-  
-  .carousel-button:hover {
-    background-color: #555;
-  }
-  
-  .description-box {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-  }
-  
+}
