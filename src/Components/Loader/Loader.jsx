@@ -13,7 +13,7 @@ const Loader = ({ onFinish }) => {
         const interval = setInterval(() => {
             setDisplayProgress((prev) => {
                 const nextValue = prev + Math.random() * 20; // Increment by a small random value
-                return Math.min(nextValue, progress); // Ensure it doesn’t go past actual progress
+                return Math.min(nextValue, progress); // Ensure it doesn't go past actual progress
             });
         }, 100);
 
@@ -36,8 +36,16 @@ const Loader = ({ onFinish }) => {
 
     return (
         <div className={`loader-container ${fadeOut ? "fade-out" : ""}`}>
-            <img src="../../../public/gifs/hypercube_md.gif" alt="Loading..." className="loader-gif" />
-            <p className="loading-text">Your Experience is {Math.round(displayProgress)}% Loaded</p>
+            <img src="/gifs/hypercube_md.gif" alt="Loading..." className="loader-gif" />
+            
+            <div className="progress-container mt-5">
+                <div 
+                    className="progress-bar" 
+                    style={{ width: `${Math.round(displayProgress)}%` }}
+                ></div>
+            </div>
+            
+            {/* <p className="loading-text">Your Experience is {Math.round(displayProgress)}% Loaded</p> */}
         </div>
     );
 };
