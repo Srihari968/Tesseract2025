@@ -47,10 +47,13 @@ function Appbar({ current }) {
         <a href="https://iitdh.ac.in">
           <img src="/IIT dh logo.png" alt="IIT Dharwad" className="w-[52.3px] h-[45.03px]" />
         </a>
+        <a href="https://tesseract.iitdh.ac.in">
+        <img src="T../../../public/Images/Tesseract.png" alt="IIT Dharwad" className="h-[2vw] w-auto" />
+        </a>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6 items-center justify center">
-          <img src="T../../../public/Images/Tesseract.png" alt="IIT Dharwad" className="h-[1.5vw] w-auto" />
+          
           <Link to="/home"><NavButton content="Home" isActive={current === "home"} /></Link>
           <Link to="/events"><NavButton content="Events" isActive={current === "events"} /></Link>
           <Link to="/schedule"><NavButton content="Schedule" isActive={current === "schedule"} /></Link>
