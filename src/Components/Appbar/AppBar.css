@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+.nav-bar-content{
+    font-family: 'Audiowide', sans-serif;
+}
+
+.pill-shaped-header {
+    padding: 1rem 2rem; /* Adjust padding as needed */
+    width: 55%; /* Adjust width as needed */
+    max-width: 1200px; /* Optional: Set a maximum width */
+  }

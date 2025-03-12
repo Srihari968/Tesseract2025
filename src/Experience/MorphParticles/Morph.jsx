@@ -371,7 +371,7 @@ function Morph() {
             // pointsFragFunctions={fragFunctions}
             // pointsVertFunctions={vertFunctions}
             scale={[2, 2, 2]}
-            pointSize={5}
+            pointSize={3}
             pointsCount={75}
             alpha={1}
           />

@@ -6,6 +6,7 @@ import GSAP from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { HiOutlineChevronDown } from "react-icons/hi";
 import { Helmet } from "react-helmet";
+import './AppBar.css';
 
 GSAP.registerPlugin(ScrollTrigger);
 
@@ -41,14 +42,15 @@ function Appbar({ current }) {
       </Helmet>
 
       {/* Translucent Pill-Shaped Header */}
-      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-opacity-60 border border-white/30 backdrop-blur-lg text-white rounded-full shadow-lg px-6 py-3 max-w-fit flex items-center justify-between space-x-6 transition-all duration-300 z-50">
+      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-opacity-60 border border-white/30 backdrop-blur-lg text-white rounded-full shadow-lg px-8 py-4 flex items-center justify-between space-x-6 transition-all duration-300 z-50 pill-shaped-header">
         {/* Logo */}
         <a href="https://iitdh.ac.in">
           <img src="/IIT dh logo.png" alt="IIT Dharwad" className="w-[52.3px] h-[45.03px]" />
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex space-x-6 items-center justify center">
+          <img src="T../../../public/Images/Tesseract.png" alt="IIT Dharwad" className="h-[1.5vw] w-auto" />
           <Link to="/home"><NavButton content="Home" isActive={current === "home"} /></Link>
           <Link to="/events"><NavButton content="Events" isActive={current === "events"} /></Link>
           <Link to="/schedule"><NavButton content="Schedule" isActive={current === "schedule"} /></Link>
@@ -62,8 +64,6 @@ function Appbar({ current }) {
           <HiOutlineChevronDown />
         </button>
       </div>
-
-
 
       {/* Mobile Dropdown Menu */}
       <div className={`fixed top-16 left-1/2 transform -translate-x-1/2 bg-white text-black bg-opacity-90 rounded-lg shadow-md overflow-hidden transition-all duration-300 ${mobileNavActive ? "h-auto py-4 px-6" : "h-0 py-0 px-0 opacity-0"}`}>
