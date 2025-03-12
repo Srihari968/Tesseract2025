@@ -24,7 +24,7 @@ function Home() {
                 <div className="w-full">
                   <span className="gradient-text">IIT Dharwad's</span>
                 </div>
-                Annual Tech Expo
+                Annual Tech Summit
               </div>
               <div className="w-full text-xl text-left custom-width:text-1xl text-tertiary">
                 12th - 13th April 2025
