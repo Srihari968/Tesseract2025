@@ -41,7 +41,7 @@ function Morph() {
   //console.log(logoMesh.nodes);
 
 
-  const meshes = [rocketMesh, logoMesh, rocketMesh]
+  const meshes = [rocketMesh, rocketMesh, rocketMesh]
   const section1 = document.getElementById("animate-1")
   const section2 = document.getElementById("animate-2")
   const section3 = document.getElementById("animate-3")
@@ -89,74 +89,74 @@ function Morph() {
 
   //particles transition timelines
   //first
-  useEffect(() => {
-    camera.position.set(0,9, 0); // Adjust this as per your requirement
-    camera.lookAt(0, 0, 0);  // Focus camera on the center
-    if (morphRef.current) {
-      const ctx = GSAP.context(() => {
-        const timeline1 = GSAP.timeline({
-          scrollTrigger: {
-            trigger: section1,
-            scroller: "#main",
-            start: "bottom bottom-=100px",
-            end: "bottom top+=100px",
-            scrub: 1,
-            onUpdate: (self) => {
-              morphRef.current.updateProgress(self.progress)
-            },
-            onEnter: () => {
-              morphRef.current.setModelB(1)
-            },
-            onLeave: () => {
-              morphRef.current.setModelA(1)
-              rotateMesh.current = false
-            },
-            onEnterBack: () => {
-              morphRef.current.setModelA(0)
-              rotateMesh.current = true
-            },
-            onLeaveBack: () => {
-              morphRef.current.setModelB(0)
-            },
-          },
-        })
-      })
-      return () => ctx.revert()
-    }
-  }, [])
+  // useEffect(() => {
+  //   camera.position.set(0,9, 0); // Adjust this as per your requirement
+  //   camera.lookAt(0, 0, 0);  // Focus camera on the center
+  //   if (morphRef.current) {
+  //     const ctx = GSAP.context(() => {
+  //       const timeline1 = GSAP.timeline({
+  //         scrollTrigger: {
+  //           trigger: section1,
+  //           scroller: "#main",
+  //           start: "bottom bottom-=100px",
+  //           end: "bottom top+=100px",
+  //           scrub: 1,
+  //           onUpdate: (self) => {
+  //             morphRef.current.updateProgress(self.progress)
+  //           },
+  //           onEnter: () => {
+  //             morphRef.current.setModelB(1)
+  //           },
+  //           onLeave: () => {
+  //             morphRef.current.setModelA(1)
+  //             rotateMesh.current = false
+  //           },
+  //           onEnterBack: () => {
+  //             morphRef.current.setModelA(0)
+  //             rotateMesh.current = true
+  //           },
+  //           onLeaveBack: () => {
+  //             morphRef.current.setModelB(0)
+  //           },
+  //         },
+  //       })
+  //     })
+  //     return () => ctx.revert()
+  //   }
+  // }, [])
 
   //second
-  useEffect(() => {
-    if (morphRef.current) {
-      const ctx = GSAP.context(() => {
-        const timeline6 = GSAP.timeline({
-          scrollTrigger: {
-            trigger: section6,
-            scroller: "#main",
-            start: "top bottom-=100px",
-            end: "bottom bottom",
-            scrub: 1,
-            onUpdate: (self) => {
-              morphRef.current.updateProgress(self.progress)
-            },
-            onEnter: () => {
-              morphRef.current.setModelB(2)
-            },
-            onLeave: () => {
-              morphRef.current.setModelA(2)
-            },
-            onEnterBack: () => {
-              morphRef.current.setModelA(1)
-            },
-            onLeaveBack: () => {
-              morphRef.current.setModelB(1)
-            },
-          },
-        })
-      })
-      return () => ctx.revert()
-    }
-  }, [])
+  // // useEffect(() => {
+  // //   if (morphRef.current) {
+  // //     const ctx = GSAP.context(() => {
+  // //       const timeline6 = GSAP.timeline({
+  // //         scrollTrigger: {
+  // //           trigger: section6,
+  // //           scroller: "#main",
+  // //           start: "top bottom-=100px",
+  // //           end: "bottom bottom",
+  // //           scrub: 1,
+  // //           onUpdate: (self) => {
+  // //             morphRef.current.updateProgress(self.progress)
+  // //           },
+  // //           onEnter: () => {
+  // //             morphRef.current.setModelB(2)
+  // //           },
+  // //           onLeave: () => {
+  // //             morphRef.current.setModelA(2)
+  // //           },
+  // //           onEnterBack: () => {
+  // //             morphRef.current.setModelA(1)
+  // //           },
+  // //           onLeaveBack: () => {
+  // //             morphRef.current.setModelB(1)
+  // //           },
+  // //         },
+  // //       })
+  // //     })
+  // //     return () => ctx.revert()
+  // //   }
+  // }, [])
 
   //mesh movement tweens
   useEffect(() => {
@@ -370,8 +370,8 @@ function Morph() {
             ]}
             // pointsFragFunctions={fragFunctions}
             // pointsVertFunctions={vertFunctions}
-            scale={[1, 1, 1]}
-            pointSize={1}
+            scale={[2, 2, 2]}
+            pointSize={5}
             pointsCount={100}
             alpha={1.2}
           />
