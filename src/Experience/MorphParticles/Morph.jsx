@@ -351,7 +351,7 @@ function Morph() {
         <group ref={localRef}>
           <R3FPointsFX
             modelsArray={meshes}
-            baseColor="#ff0000"
+            baseColor="#e62c2c"
             modelA={0}
             modelB={0}
             ref={morphRef}
@@ -372,8 +372,8 @@ function Morph() {
             // pointsVertFunctions={vertFunctions}
             scale={[2, 2, 2]}
             pointSize={5}
-            pointsCount={100}
-            alpha={1.2}
+            pointsCount={75}
+            alpha={1}
           />
         </group>
       </group>
@@ -383,5 +383,6 @@ function Morph() {
 useGLTF.preload("/Models/rocket.glb")
 useGLTF.preload("/Models/earth.glb")
 useGLTF.preload("Models/iitdhLogo.glb")
+useGLTF.preload("Models/logofinal.glb")
 
 export default Morph
