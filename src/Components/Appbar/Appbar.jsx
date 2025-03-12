@@ -42,15 +42,15 @@ function Appbar({ current }) {
       </Helmet>
 
       {/* Translucent Pill-Shaped Header */}
-      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-opacity-60 border border-white/30 backdrop-blur-lg text-white rounded-full shadow-lg px-8 py-4 flex items-center justify-between space-x-6 transition-all duration-300 z-50 pill-shaped-header">
+      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-opacity-60 border border-white/30 backdrop-blur-lg text-white rounded-full max-w-fit shadow-lg px-6 py-4 flex items-center space-x-4 transition-all duration-300 z-50 pill-shaped-header">
         {/* Logo */}
         <a href="https://iitdh.ac.in">
           <img src="/IIT dh logo.png" alt="IIT Dharwad" className="w-[52.3px] h-[45.03px]" />
         </a>
+        <img src="../../../public/Images/Tesseract.png" alt="Tesseract" className="h-[1.5vw] w-auto m-0 p-0" />
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6 items-center justify center">
-          <img src="T../../../public/Images/Tesseract.png" alt="IIT Dharwad" className="h-[1.5vw] w-auto" />
+        <div className="hidden md:flex space-x-6 items-center">
           <Link to="/home"><NavButton content="Home" isActive={current === "home"} /></Link>
           <Link to="/events"><NavButton content="Events" isActive={current === "events"} /></Link>
           <Link to="/schedule"><NavButton content="Schedule" isActive={current === "schedule"} /></Link>
