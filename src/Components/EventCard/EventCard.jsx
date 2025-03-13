@@ -1,84 +1,57 @@
+import { useState } from "react";
 import { IoLocationSharp } from "react-icons/io5";
 
-export default function EventCard({ flipLayout = false, data }) {
+export default function EventCard({ data,isFocused }) {
+  const [showContent, setShowContent] = useState(false);
+
   return (
-    <div className={`w-full flex my-12 ${flipLayout && "justify-end"}`}>
-      <div className="w-full min-[900px]:w-[900px]">
-        <div className="w-full flex flex-col sm:flex-row rounded-xl shadow-lg">
-          {/* Left Side - Image Section */}
-          <div
-            className="w-full sm:w-5/12 min-h-[300px] relative bg-gradient-to-br 
-            from-teal-500 to-blue-700 p-4 max-sm:rounded-t-xl sm:rounded-l-xl shadow-xl"
-          >
-            <div
-              className="relative z-20 rounded-xl pt-[100%] h-full"
-              style={{
-                backgroundImage: `url(${data.image})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center center",
-                backgroundSize: "cover",
-                borderRadius: "12px",
-                border: "4px solid rgba(255, 255, 255, 0.2)",
-              }}
-            ></div>
-          </div>
+    <div
+      className="relative w-[300px] h-[400px] rounded-xl overflow-hidden shadow-lg cursor-pointer transition-transform hover:scale-105"
+      onMouseEnter={() => isFocused && setShowContent(true)}
+      onMouseLeave={() => isFocused && setShowContent(false)}
+    >
+      {/* Fixed Title & Time at the Top */}
+      <div className="absolute top-0 left-0 w-full bg-black/80 text-white p-3 text-center z-10">
+        <h3 className="text-lg font-bold">{data.heading}</h3>
+        <p className="text-sm">{data.timing}</p>
+      </div>
 
-          {/* Right Side - Content Section */}
-          <div
-            className="w-full sm:w-7/12 min-h-[300px] bg-gray-900/50 backdrop-blur-lg 
-            py-9 px-6 relative event-block sm:rounded-r-xl max-sm:rounded-b-xl text-white"
-          >
-            <div
-              className="absolute w-[500px] h-[500px] top-[-100px] left-[-50px] opacity-30"
-              style={{
-                backgroundImage: "url('/Images/blue-neon.svg')",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundPosition: "center center",
-                transform: "rotate(180deg)",
-              }}
-            ></div>
+      {/* Image Section (Starts Below Title) */}
+      <div className="absolute top-[20%] w-full h-[80%] bg-cover bg-center" 
+        style={{ backgroundImage: `url(${data.image})` }}>
+      </div>
 
-            <div className="relative z-10 h-full flex flex-col justify-between">
-              {/* Event Title */}
-              <div>
-                <h2 className="text-2xl font-bold tracking-wide bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">
-                  {data.heading}
-                </h2>
-                <p className="text-sm mt-2 text-gray-300">{data.content}</p>
+      {/* Description Overlay (Appears on Hover) */}
+      {showContent && (
+        <div className="absolute top-[20%] w-full h-[80%] bg-black/80 text-white flex flex-col p-6 justify-center items-center">
+          <p className="text-sm text-center">{data.content}</p>
+
+          {/* Location & Registration */}
+          <div className="mt-4">
+            {data.location && (
+              <div className="flex items-center gap-2 bg-blue-600 px-3 py-1 rounded-full text-sm shadow-md w-fit">
+                <IoLocationSharp />
+                <span>{data.location}</span>
               </div>
-
-              {/* Location & Registration */}
-              <div className="text-sm mt-4">
-                {/* Location Badge */}
-                {/* {data.location && (
-                  <div className="flex items-center gap-2 bg-blue-600 px-3 py-1 rounded-full text-sm text-white shadow-md w-fit">
-                    <IoLocationSharp />
-                    <span>{data.location}</span>
-                  </div> */}
-                {/* )} */}
-
-                {/* Registration Button */}
-                <div className="mt-4">
-                  <a href={data.registrationLink} target="_blank">
-                    <button
-                      type="button"
-                      className={`px-6 py-2.5 text-sm font-semibold text-white rounded-full shadow-lg transform transition-all ease-in-out ${
-                        data.registrationLink === ""
-                          ? "bg-gray-500 cursor-not-allowed"
-                          : "bg-gradient-to-r from-green-400 to-teal-500 hover:scale-105 hover:shadow-2xl"
-                      }`}
-                      disabled={data.registrationLink === ""}
-                    >
-                      {data.registrationLink === "" ? "Coming Soon" : "Register Now"}
-                    </button>
-                  </a>
-                </div>
-              </div>
+            )}
+            <div className="mt-4">
+              <a href={data.registrationLink} target="_blank">
+                <button
+                  type="button"
+                  className={`px-4 py-2 text-sm font-semibold text-white rounded-full shadow-lg transition-all ${
+                    data.registrationLink === ""
+                      ? "bg-gray-500 cursor-not-allowed"
+                      : "bg-gradient-to-r from-green-400 to-teal-500 hover:scale-105"
+                  }`}
+                  disabled={data.registrationLink === ""}
+                >
+                  {data.registrationLink === "" ? "Coming Soon" : "Register Now"}
+                </button>
+              </a>
             </div>
           </div>
         </div>
-      </div>  
+      )}
     </div>
   );
 }
