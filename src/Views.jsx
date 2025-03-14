@@ -11,6 +11,8 @@ import AlertPage from '../src/Components/AlertPage'
 import ProtectedRoute from './middleware/ProtectedRoute';
 import Register from "./Pages/Register/Register"
 import CircularCarousel from "./Components/Circularcarousel/CircularCarousel"
+import Test from "./Pages/Events/Test"
+
 const Views = () => {
   return (
     <Routes>
@@ -34,6 +36,7 @@ const Views = () => {
       </Route>
       <Route path="/carousel" element={<CircularCarousel />} />
       <Route index element={<Navigate to="/home" replace />} />
+      <Route path="/test" element={<Test/>} />
     </Routes>
   )
 }

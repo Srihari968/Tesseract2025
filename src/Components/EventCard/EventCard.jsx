@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { IoLocationSharp } from "react-icons/io5";
 
+
+
 export default function EventCard({ data,isFocused }) {
   const [showContent, setShowContent] = useState(false);
 
@@ -23,7 +25,7 @@ export default function EventCard({ data,isFocused }) {
 
       {/* Description Overlay (Appears on Hover) */}
       {showContent && (
-        <div className="absolute top-[20%] w-full h-[80%] bg-black/80 text-white flex flex-col p-6 justify-center items-center">
+        <div className="absolute top-[20%] w-full h-[80%] bg-black/80 text-white flex flex-col p-6 justify-center items-center overlay-div">
           <p className="text-sm text-center">{data.content}</p>
 
           {/* Location & Registration */}
@@ -48,5 +50,6 @@ export default function EventCard({ data,isFocused }) {
         </div>
       )}
     </div>
+    
   );
 }
