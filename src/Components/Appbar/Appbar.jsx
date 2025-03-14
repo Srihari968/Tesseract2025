@@ -74,8 +74,7 @@ function Appbar({ current }) {
           <Link to="/events" onClick={() => setMobileNavActive(false)}><NavTile content="Events" isActive={current === "events"} /></Link>
           <Link to="/schedule" onClick={() => setMobileNavActive(false)}><NavTile content="Schedule" isActive={current === "schedule"} /></Link>
           <Link to="/team" onClick={() => setMobileNavActive(false)}><NavTile content="Team" isActive={current === "team"} /></Link>
-          <Link to="/cultural" onClick={() => setMobileNavActive(false)}><NavTile content="Cultural Events" isActive={current === "cultural"} /></Link>
-          <Link to="/login" onClick={() => setMobileNavActive(false)}><NavTile content="Login" isActive={current === "login"} /></Link>
+          <Link to="/register" onClick={() => setMobileNavActive(false)}><NavTile content="Register" isActive={current === "register"} /></Link>
         </div>
       </div>
     </>
