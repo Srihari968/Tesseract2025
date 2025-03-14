@@ -4,7 +4,7 @@ import NavButton from "../NavButton/NavButton";
 import NavTile from "../NavTile/NavTile";
 import GSAP from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { HiOutlineChevronDown } from "react-icons/hi";
+import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import { Helmet } from "react-helmet";
 import './AppBar.css';
 
@@ -41,19 +41,18 @@ function Appbar({ current }) {
         <title>Tesseract - {current.charAt(0).toUpperCase() + current.slice(1)}</title>
       </Helmet>
 
-      {/* Translucent Pill-Shaped Header */}
-      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-opacity-60 border border-white/30 backdrop-blur-lg text-white rounded-full shadow-lg px-8 py-4 flex items-center justify-between space-x-6 transition-all duration-300 z-50 pill-shaped-header">
+      {/* Navbar Container */}
+      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-opacity-60 border border-white/30 backdrop-blur-lg text-white rounded-full shadow-lg px-6 py-3 flex items-center justify-between w-[90%] max-w-[1200px] transition-all duration-300 z-50">
         {/* Logo */}
         <a href="https://iitdh.ac.in">
-          <img src="/IIT dh logo.png" alt="IIT Dharwad" className="w-[52.3px] h-[45.03px]" />
+          <img src="/IIT dh logo.png" alt="IIT Dharwad" className="w-[40px] h-auto" />
         </a>
         <a href="https://tesseract.iitdh.ac.in">
-        <img src="/Images/Tesseract.png" alt="IIT Dharwad" className="h-[2vw] w-auto" />
+          <img src="/Images/Tesseract.png" alt="Tesseract" className="h-[30px] w-auto" />
         </a>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6 items-center justify center">
-          
+        {/* Desktop Navigation - Hidden on smaller screens */}
+        <div className="hidden lg:flex space-x-4 items-center">
           <Link to="/home"><NavButton content="Home" isActive={current === "home"} /></Link>
           <Link to="/events"><NavButton content="Events" isActive={current === "events"} /></Link>
           <Link to="/schedule"><NavButton content="Schedule" isActive={current === "schedule"} /></Link>
@@ -63,13 +62,13 @@ function Appbar({ current }) {
 
         {/* Mobile Menu Button */}
         <button onClick={() => setMobileNavActive(!mobileNavActive)}
-          className={`md:hidden text-4xl text-white transition-transform duration-300 ${mobileNavActive ? "rotate-180" : ""}`}>
-          <HiOutlineChevronDown />
+          className="lg:hidden text-3xl text-white">
+          {mobileNavActive ? <HiOutlineX /> : <HiOutlineMenu />}
         </button>
       </div>
 
       {/* Mobile Dropdown Menu */}
-      <div className={`fixed top-16 left-1/2 transform -translate-x-1/2 bg-white text-black bg-opacity-90 rounded-lg shadow-md overflow-hidden transition-all duration-300 ${mobileNavActive ? "h-auto py-4 px-6" : "h-0 py-0 px-0 opacity-0"}`}>
+      <div className={`fixed top-[60px] left-0 w-full bg-white text-black bg-opacity-95 rounded-lg shadow-lg overflow-hidden transition-all duration-300 ${mobileNavActive ? "h-auto py-4 px-6" : "h-0 py-0 px-0 opacity-0"}`}>
         <div className="flex flex-col space-y-2">
           <Link to="/home" onClick={() => setMobileNavActive(false)}><NavTile content="Home" isActive={current === "home"} /></Link>
           <Link to="/events" onClick={() => setMobileNavActive(false)}><NavTile content="Events" isActive={current === "events"} /></Link>
