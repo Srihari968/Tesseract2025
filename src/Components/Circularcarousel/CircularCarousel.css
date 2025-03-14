@@ -1,8 +1,9 @@
 .carousel-container {
   position: relative;
-  width: 100%;
+  width: 60%;
   height: 400px; /* Adjust height as needed */
   overflow: hidden;
+  margin: 0 auto; /* Center the carousel container */
 }
 
 .carousel-button {
