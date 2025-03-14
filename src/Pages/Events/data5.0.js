@@ -27,7 +27,7 @@ and provide participants with a strong foundation in aerospace principles.`,
   },
   {
     heading: "Design Workshop",
-    content: `The ultimate 30-hour buildathon at PARSEC 5.0! Gather your team to design, code, and construct a robot to tackle exciting challenges. This competition promises non-stop excitement, collaboration, and a chance to shine.`,
+    content: `Design Workshop`,
     image: "/Images/Events/build-a-bot-for-site.png",
     registrationLink: "",
     location: "PC IIT Dharwad",

@@ -6,7 +6,7 @@ export default function EventCard({ data,isFocused }) {
 
   return (
     <div
-      className="relative w-[300px] h-[400px] rounded-xl overflow-hidden shadow-lg cursor-pointer transition-transform hover:scale-105"
+      className="relative w-[500px] h-[400px] rounded-xl overflow-hidden shadow-lg cursor-pointer transition-transform hover:scale-105"
       onMouseEnter={() => isFocused && setShowContent(true)}
       onMouseLeave={() => isFocused && setShowContent(false)}
     >
@@ -28,12 +28,7 @@ export default function EventCard({ data,isFocused }) {
 
           {/* Location & Registration */}
           <div className="mt-4">
-            {data.location && (
-              <div className="flex items-center gap-2 bg-blue-600 px-3 py-1 rounded-full text-sm shadow-md w-fit">
-                <IoLocationSharp />
-                <span>{data.location}</span>
-              </div>
-            )}
+            
             <div className="mt-4">
               <a href={data.registrationLink} target="_blank">
                 <button

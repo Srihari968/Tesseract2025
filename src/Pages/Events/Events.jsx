@@ -10,6 +10,12 @@ const Events = () => {
   const [clickedIndex, setClickedIndex] = useState(null);
   const carouselRef = useRef(null);
 
+  const images = EventsData.map((event, index) => ({
+    key: index + 1,
+    content: <EventCard data={event} flipLayout={1 % 2 === 1} key={index + 1} className="fix" />,
+    description: event.content
+  }));
+
   const slides = EventsData.map((event, i) => ({
     key: i + 1,
     content: <EventCard data={event} isFocused={i === index}/>,
@@ -20,18 +26,22 @@ const Events = () => {
   useEffect(() => {
     const handleScroll = (event) => {
       event.preventDefault();
-      if (event.deltaY > 0) {
+      if (event.deltaX > 50) { // Adjust the value to slow down scrolling
         setIndex((prevIndex) => (prevIndex + 1) % slides.length);
-      } else if (event.deltaY < 0) {
+      } else if (event.deltaX < -50) { // Adjust the value to slow down scrolling
         setIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
       }
+  
+      setTimeout(() => {
+        setIsScrolling(false);
+      }, 500); // Increase the delay to slow down scrolling
     };
-
+  
     const carouselElement = carouselRef.current;
     if (carouselElement) {
       carouselElement.addEventListener("wheel", handleScroll);
     }
-
+  
     return () => {
       if (carouselElement) {
         carouselElement.removeEventListener("wheel", handleScroll);
@@ -55,7 +65,16 @@ const Events = () => {
             </button>
           </div>
         </div>
+        <div className="stacked-events">
+          {images.map((image, i) => (
+            <div key={i} className="mb-8">
+              {image.content}
+            </div>
+          ))}
+        </div>
       </div>
+      <span></span>
+      <span></span>
     </div>
   );
 };
