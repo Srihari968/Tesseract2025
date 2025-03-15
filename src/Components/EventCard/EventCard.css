@@ -1,0 +1,9 @@
+@media (max-width: 768px){
+    .overlay-div{
+        display: none;
+    }
+
+    .main-card{
+        width: 80% !important;
+    }
+}
