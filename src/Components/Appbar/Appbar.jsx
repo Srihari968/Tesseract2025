@@ -42,7 +42,7 @@ function Appbar({ current }) {
       </Helmet>
 
       {/* Navbar Container */}
-      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-opacity-60 border border-white/30 backdrop-blur-lg text-white rounded-full shadow-lg px-6 py-3 flex items-center justify-between w-[90%] max-w-[1200px] transition-all duration-300 z-50">
+      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-opacity-60 border border-white/30 backdrop-blur-lg text-white rounded-full shadow-lg px-6 py-3 flex items-center justify-between w-[55%] max-w-[1200px] transition-all duration-300 z-50">
         {/* Logo */}
         <a href="https://iitdh.ac.in">
           <img src="/IIT dh logo.png" alt="IIT Dharwad" className="w-[40px] h-auto" />
