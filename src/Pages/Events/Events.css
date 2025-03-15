@@ -1,8 +1,8 @@
 .popup-content {
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black for a blurred effect */
+    background: rgba(0, 0, 0, 0.7) !important; /* Semi-transparent black for a blurred effect */
     color: white;
     height: auto;
-    width: 75%;
+    width: 200px;
     border: none;
     padding: 20px;
     border-radius: 10px;
@@ -10,5 +10,16 @@
     backdrop-filter: blur(10px); /* Applies a blur effect */
     -webkit-backdrop-filter: blur(10px); /* For Safari support */
     transition: all 0.3s ease-in-out; /* Smooth transition */
+    margin: none;
+}
+
+.popup-content p{
     font-size: 12px;
+    padding: 20px;
+    
+}
+
+.popup-content h3{
+    /* padding-bottom: 10px; */
+    font-size: 20px;
 }

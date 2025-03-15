@@ -8,7 +8,7 @@ export default function EventCard({ data,isFocused }) {
 
   return (
     <div
-      className="relative w-[500px] h-[400px] rounded-xl overflow-hidden shadow-lg cursor-pointer transition-transform hover:scale-105"
+      className="relative main-card w-[500px] h-[400px] rounded-xl overflow-hidden shadow-lg cursor-pointer transition-transform hover:scale-105"
       onMouseEnter={() => isFocused && setShowContent(true)}
       onMouseLeave={() => isFocused && setShowContent(false)}
     >

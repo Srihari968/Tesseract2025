@@ -2,4 +2,8 @@
     .overlay-div{
         display: none;
     }
+
+    .main-card{
+        width: 80% !important;
+    }
 }

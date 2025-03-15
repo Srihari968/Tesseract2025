@@ -74,11 +74,15 @@ const Events = () => {
             <div key={i} className="mb-8">
               {isMobile ? (
                 <Popup trigger={<div className="event-card-wrapper"><EventCard data={event} /></div>} modal>
-                  <button className="close-btn" onClick={() => setOpenPopup(null)}>✖</button>
-                  <div className="popup-content">
-                    <h3>{event.heading}</h3>
-                    <p>{event.content}</p>
-                  </div>
+                  {
+                    close => (
+                      <div>
+                        <button className="close-btn" onClick={() => close()}>✖</button>
+                        <h3>{event.heading}</h3>
+                        <p>{event.content}</p>
+                      </div>
+                    )
+                }
                 </Popup>
               ) : (
                 <EventCard data={event} />
