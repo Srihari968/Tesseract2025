@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import Carousel from "react-spring-3d-carousel";
 import "../../Components/Circularcarousel/CircularCarousel.css";
 import EventCard from "../../Components/EventCard/EventCard";
-import EventsData from "./data5.0";
-
+import EventsData from "./data_j";
+import EventCardMob from "../../Components/EventCard/EventCardMob";
 import './Events.css';
 
 import Popup from "reactjs-popup";
@@ -71,22 +71,27 @@ const Events = () => {
 
         <div className="stacked-events">
           {EventsData.map((event, i) => (
-            <div key={i} className="mb-8">
-              {isMobile ? (
-                <Popup trigger={<div className="event-card-wrapper"><EventCard data={event} /></div>} modal>
-                  {
-                    close => (
-                      <div>
-                        <button className="close-btn" onClick={() => close()}>✖</button>
-                        <h3>{event.heading}</h3>
-                        <p>{event.content}</p>
-                      </div>
-                    )
-                }
-                </Popup>
+            <div key={i} className="mb-8 event-card-wrapper">
+              {
+                
+              /* {isMobile ? (
+                // <Popup trigger={<div className="event-card-wrapper"><EventCard data={event} /></div>} modal>
+                //   {
+                //     close => (
+                //       <div>
+                //         <button className="close-btn" onClick={() => close()}>✖</button>
+                //         <h3>{event.heading}</h3>
+                //         <p>{event.content}</p>
+                //       </div>
+                //     )
+                // }
+                // </Popup>
               ) : (
                 <EventCard data={event} />
-              )}
+              )} */}
+              <EventCardMob data={event} isFocused={false} />
+              <br></br>
+              <br></br>
             </div>
           ))}
         </div>
