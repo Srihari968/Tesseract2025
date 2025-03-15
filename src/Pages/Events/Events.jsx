@@ -31,26 +31,35 @@ const Events = () => {
   }));
 
   useEffect(() => {
+    let scrollTimeout; // Prevent multiple rapid scrolls
+  
     const handleScroll = (event) => {
       event.preventDefault();
-      if (event.deltaX > 50) {
-        setIndex((prevIndex) => (prevIndex + 1) % slides.length);
-      } else if (event.deltaX < -50) {
-        setIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
-      }
+  
+      // Debounce the scroll event
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        if (event.deltaX > 20) {  // Reduced threshold for smoother scrolling
+          setIndex((prevIndex) => (prevIndex + 1) % slides.length);
+        } else if (event.deltaX < -20) {
+          setIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
+        }
+      }, 100); // Delay to avoid multiple jumps
     };
-
+  
     const carouselElement = carouselRef.current;
     if (carouselElement) {
       carouselElement.addEventListener("wheel", handleScroll);
     }
-
+  
     return () => {
       if (carouselElement) {
         carouselElement.removeEventListener("wheel", handleScroll);
       }
+      clearTimeout(scrollTimeout);
     };
   }, [index, slides.length]);
+  
 
   return (
     <div className="relative mx-auto max-w-page_lg md:px-8 px-4 pt-32 overflow-hidden">

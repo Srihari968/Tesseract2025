@@ -6,7 +6,7 @@
       "image": "/Images/Events/devhack-for-site.png",
       "registrationLink": "",
       "location": "PC IIT Dharwad",
-      "timing": "31 Jan, 2:00 PM - 1 Feb, 10:00 PM"
+      "timing": "Workshop Session 1,2,3 and 4"
     },
     {
       "heading": "Aeromodelling Workshop",
@@ -15,7 +15,7 @@
       "image": "/Images/Events/algostrike-for-site.png",
       "registrationLink": "",
       "location": "PC IIT Dharwad",
-      "timing": "1 Feb, 2:00 PM - 4:00 PM"
+      "timing": "Workshop Session 1 and 2"
     },
     {
       "heading": "Design Workshop",
@@ -24,7 +24,7 @@
       "image": "/Images/Events/build-a-bot-for-site.png",
       "registrationLink": "",
       "location": "PC IIT Dharwad",
-      "timing": "31 Jan, 12:00 PM - 1 Feb, 12:00 PM"
+      "timing": "Workshop Session 1 and 3"
     },
     {
       "heading": "DevOps Workshop",
@@ -33,6 +33,6 @@
       "image": "/Images/Events/bithunt-for-site.png",
       "registrationLink": "",
       "location": "PC IIT Dharwad",
-      "timing": "1 Feb, 9:00 AM - 3:00 PM"
+      "timing": "Workshop Session 2 and 3"
     }
   ]  
