@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { FaMicrophone, FaCode, FaRocket, FaCogs, FaUsers, FaLightbulb } from "react-icons/fa";
+import { FaMicrophone, FaCode, FaRocket, FaCogs, FaUsers, FaLightbulb, FaFilter } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const events = [
@@ -18,8 +18,20 @@ const events = [
 
 const categories = ["All", "Workshop", "Expo", "Ceremony", "Talk", "Networking"];
 
+const getTimeRemaining = (eventDateTime) => {
+  const total = Date.parse(eventDateTime) - Date.now();
+  const days = Math.floor(total / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((total / 1000 / 60) % 60);
+  const seconds = Math.floor((total / 1000) % 60);
+  return { total, days, hours, minutes, seconds };
+};
+
+
 const Timeline = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [countdowns, setCountdowns] = useState({});
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,29 +39,65 @@ const Timeline = () => {
         setSelectedCategory("All");
       }
     };
-
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const updatedCountdowns = {};
+      events.forEach((event) => {
+        const eventDateTime = new Date(`${event.date}T${event.time}:00`);
+        updatedCountdowns[event.title] = getTimeRemaining(eventDateTime);
+      });
+      setCountdowns(updatedCountdowns);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const filteredEvents = selectedCategory === "All" ? events : events.filter(event => event.category === selectedCategory);
 
   return (
     <div className="bg-black text-white py-10 font-sans">
-      <h2 className="text-center text-5xl font-extrabold text-red-500 mb-10 drop-shadow-glow tracking-wide uppercase">Schedule</h2>
       
-      {/* Category Filters - Hidden on Mobile */}
-      <div className="flex justify-center space-x-4 mb-6 hidden md:flex">
-        {categories.map((category) => (
+      {/* Animated Filter Button & Categories (Hidden on Mobile) */}
+      <div className="hidden md:flex justify-center items-center relative mb-6 w-full">
+        <motion.div 
+          className="relative"
+          animate={{ x: dropdownOpen ? -400 : 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
           <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-5 py-3 rounded-md transition duration-300 drop-shadow-glow text-lg font-medium tracking-wide ${selectedCategory === category ? "bg-red-500 text-white" : "bg-gray-700 text-gray-300 hover:bg-red-400"}`}
+            onClick={() => setDropdownOpen(!dropdownOpen)}
+            className="px-5 py-3 rounded-md bg-red-500 text-white text-lg font-medium tracking-wide flex items-center space-x-2 relative z-10"
           >
-            {category}
+            <FaFilter />
+            <span>Filters</span>
           </button>
-        ))}
+        </motion.div>
+        {dropdownOpen && (
+          <motion.div 
+            className="absolute left-1/2 transform -translate-x-1/2 flex space-x-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ staggerChildren: 0.15, delayChildren: 0.1 }}
+          >
+            {categories.map((category, index) => (
+              <motion.button
+                key={category}
+                onClick={() => { setSelectedCategory(category); setDropdownOpen(false); }}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 * index, duration: 0.3, ease: "easeOut" }}
+                className={`px-4 py-2 rounded-md transition duration-300 text-lg font-medium ${selectedCategory === category ? "bg-red-500" : "hover:bg-red-400"}`}
+              >
+                {category}
+              </motion.button>
+            ))}
+          </motion.div>
+        )}
       </div>
       
       <VerticalTimeline>
@@ -68,10 +116,13 @@ const Timeline = () => {
               date={<span className="text-lg font-semibold tracking-wide">{`${event.date} | ${event.time}`}</span>}
               iconStyle={{ background: event.color, color: "#000", boxShadow: `0px 0px 15px ${event.color}` }}
               icon={event.icon}
-              position={index % 2 === 0 ? "left" : "right"} // Alternating sides
+              position={index % 2 === 0 ? "left" : "right"}
             >
               <h3 className="text-2xl font-bold text-red-400 drop-shadow-glow tracking-wide">{event.title}</h3>
               <p className="text-gray-300 text-lg leading-relaxed font-light">{event.description}</p>
+              {countdowns[event.title] && countdowns[event.title].total > 0 && (
+                <p className="text-green-400 mt-2">Starts in: {countdowns[event.title].days}d {countdowns[event.title].hours}h {countdowns[event.title].minutes}m {countdowns[event.title].seconds}s</p>
+              )}
             </VerticalTimelineElement>
           </motion.div>
         ))}
