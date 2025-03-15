@@ -68,7 +68,7 @@ function Appbar({ current }) {
       </div>
 
       {/* Mobile Dropdown Menu */}
-      <div className={`fixed top-[60px] left-0 w-full bg-white text-black bg-opacity-95 rounded-lg shadow-lg overflow-hidden transition-all duration-300 ${mobileNavActive ? "h-auto py-4 px-6" : "h-0 py-0 px-0 opacity-0"}`}>
+      <div className={`fixed z-50 top-[60px] left-0 w-full bg-white text-black bg-opacity-95 rounded-lg shadow-lg overflow-hidden transition-all duration-300 ${mobileNavActive ? "h-auto py-4 px-6" : "h-0 py-0 px-0 opacity-0"}`}>
         <div className="flex flex-col space-y-2">
           <Link to="/home" onClick={() => setMobileNavActive(false)}><NavTile content="Home" isActive={current === "home"} /></Link>
           <Link to="/events" onClick={() => setMobileNavActive(false)}><NavTile content="Events" isActive={current === "events"} /></Link>
