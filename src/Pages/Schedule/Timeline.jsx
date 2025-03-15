@@ -10,10 +10,11 @@ const events = [
   { date: "2025-04-12", time: "14:30", title: "Inauguration Ceremony", description: "Opening remarks, speeches by Sudha Murthy & Pralhad Joshi.", category: "Ceremony", icon: <FaLightbulb />, color: "#ff0000" },
   { date: "2025-04-12", time: "16:30", title: "Session-2 for Workshop", description: "Advanced topics in AI/ML, Web3, and DevOps.", category: "Workshop", icon: <FaCode />, color: "#ff4500" },
   { date: "2025-04-12", time: "19:45", title: "Knowledge Series - Talk 1", description: "Talk by Raj Vikramaditya on Competitive Programming.", category: "Talk", icon: <FaMicrophone />, color: "#ff0000" },
-  { date: "2025-04-13", time: "09:30", title: "Session-1 for Workshop", description: "Continuation of hands-on workshops.", category: "Workshop", icon: <FaCode />, color: "#ff4500" },
+  { date: "2025-04-13", time: "09:30", title: "Session-3 for Workshop", description: "Continuation of hands-on workshops.", category: "Workshop", icon: <FaCode />, color: "#ff4500" },
   { date: "2025-04-13", time: "12:30", title: "Tech Expo", description: "Experience innovative projects from students and startups.", category: "Expo", icon: <FaUsers />, color: "#ff0000" },
   { date: "2025-04-13", time: "18:30", title: "Talk-2 & Closing Ceremony", description: "Talk by Sandeep Jain on DSA and the growth of GeeksforGeeks.", category: "Talk", icon: <FaMicrophone />, color: "#ff4500" },
-  { date: "2025-04-13", time: "20:00", title: "Networking Dinner", description: "Connect with professionals, speakers, and attendees.", category: "Networking", icon: <FaUsers />, color: "#ff0000" }
+  { date: "2025-04-13", time: "20:00", title: "Networking Dinner", description: "Connect with professionals, speakers, and attendees.", category: "Networking", icon: <FaUsers />, color: "#ff0000" },
+  { date: "2025-04-13", time: "15:00", title: "Session-4 for Workshop", description: "Continuation of hands-on workshops.", category: "Workshop", icon: <FaCode />, color: "#ff4500" }
 ];
 
 const categories = ["All", "Workshop", "Expo", "Ceremony", "Talk", "Networking"];
