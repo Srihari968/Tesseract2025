@@ -9,11 +9,6 @@ import './Events.css';
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
-import './Events.css';
-
-import Popup from "reactjs-popup";
-import "reactjs-popup/dist/index.css";
-
 const Events = () => {
   const [index, setIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -51,12 +46,12 @@ const Events = () => {
         }
       }, 100); // Delay to avoid multiple jumps
     };
-
+  
     const carouselElement = carouselRef.current;
     if (carouselElement) {
       carouselElement.addEventListener("wheel", handleScroll);
     }
-
+  
     return () => {
       if (carouselElement) {
         carouselElement.removeEventListener("wheel", handleScroll);
