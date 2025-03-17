@@ -54,7 +54,7 @@ function Home() {
             <img src="vedartha.jpg" alt="Vedartha" className="w-full md:w-1/2 h-64 object-cover rounded-lg" />
             <div className="md:w-1/2 text-white text-left p-6">
               <h2 className="text-3xl font-bold text-secondary">Vedartha</h2>
-              <p className="mt-2 text-lg text-primary">
+              <p className="mt-2 text-lg text-tertiary">
                 A series of insightful talks and panel discussions featuring industry leaders, researchers, and entrepreneurs sharing their expertise.
               </p>
             </div>
@@ -65,7 +65,7 @@ function Home() {
             <img src="vidyutx.jpg" alt="VidyutX" className="w-full md:w-1/2 h-64 object-cover rounded-lg" />
             <div className="md:w-1/2 text-white text-left p-6">
               <h2 className="text-3xl font-bold text-secondary">VidyutX</h2>
-              <p className="mt-2 text-lg text-primary">
+              <p className="mt-2 text-lg text-tertiary">
                 A dynamic showcase of cutting-edge projects, start-ups, and research advancements that define the future of technology.
               </p>
             </div>
@@ -76,7 +76,7 @@ function Home() {
             <img src="tattva.jpg" alt="Tattva" className="w-full md:w-1/2 h-64 object-cover rounded-lg" />
             <div className="md:w-1/2 text-white text-left p-6">
               <h2 className="text-3xl font-bold text-secondary">Tattva</h2>
-              <p className="mt-2 text-lg text-primary">
+              <p className="mt-2 text-lg text-tertiary">
                 Hands-on workshops covering emerging technologies, programming, AI, and more to upskill students and professionals.
               </p>
             </div>
