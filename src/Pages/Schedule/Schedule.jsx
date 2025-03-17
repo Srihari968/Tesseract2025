@@ -8,6 +8,7 @@ import { FaClock, FaMapMarkerAlt, FaMap } from "react-icons/fa";
 import axios from "axios";
 import Papa from "papaparse";
 import ComingSoonCard from "../../Components/ComingSoonCard/ComingSoonCard";
+import Timeline from "./Timeline";
 
 dayjs.extend(relativeTime);
 dayjs.extend(duration);
@@ -208,7 +209,7 @@ const Schedule = () => {
                     <EventCard data={data} flipLayout={index % 2 === 1} key={index} />
                   )
                 })} */}
-        <ComingSoonCard></ComingSoonCard>
+        <Timeline/>
       </div>
     </div>
   );

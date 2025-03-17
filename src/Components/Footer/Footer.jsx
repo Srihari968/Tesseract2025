@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div
       className="container max-w-full bg-black/70 relative pt-16 pb-16 lg:pt-32 lg:pb-32"
-      style={{ zIndex: 100 }}
+      style={{ zIndex: 40 }}
     >
       <div className="mx-auto max-w-page_lg grid grid-cols-1 lg:grid-cols-4 px-4 lg:px-32 footer">
         <div>
